@@ -1,0 +1,6 @@
+aws_bedrock_chat.admin_settings:
+  title: 'AWS Bedrock Chat'
+  description: 'Configure AWS Bedrock Chat module settings.'
+  parent: system.admin_config_services
+  route_name: aws_bedrock_chat.settings
+  weight: 100

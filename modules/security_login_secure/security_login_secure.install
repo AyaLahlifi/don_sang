@@ -1,0 +1,155 @@
+<?php
+
+use Drupal\security_login_secure\feedback;
+use Drupal\security_login_secure\Utilities;
+
+/**
+ * Configure variables are cleared when module is uninstalled.
+ **/
+
+function security_login_secure_uninstall() {
+  $config = \Drupal::config('security_login_secure.settings');
+  if ($config->get('miniorange_web_security_uninstall_status') === 0)
+  {
+    $drupal_is_cli = Utilities::drupal_is_cli();
+    if( !$drupal_is_cli )
+    {
+      feedback::website_security_feedback();
+    }
+  }
+}
+
+function security_login_secure_install(){
+  \Drupal::configFactory()->getEditable('security_login_secure.settings')->set('miniorange_web_security_uninstall_status', 0)->save();
+}
+
+/**
+ * Implements hook_schema().
+ */
+function security_login_secure_schema() {
+  $schema['miniorange_website_security_user_track'] = [
+    'description' => 'Tracks number of failed login user attempts.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'uname' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'login_attempts' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'failed_timestamp' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'blocked_timestamp' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'indexes' => [
+      'uname' => ['uname'],
+      'login_attempts' => ['login_attempts'],
+      'failed_timestamp' => ['failed_timestamp'],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  $schema['miniorange_website_security_ip_track'] = [
+    'description' => 'Tracks number of failed login ip attempts.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'ip_address' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'login_attempts' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'ip_type' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'by_admin' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'failed_timestamp' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'blocked_timestamp' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'indexes' => [
+      'failed_timestamp' => ['failed_timestamp'],
+      'ip_address' => ['ip_address'],
+      'login_attempts' => ['login_attempts'],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  $schema['miniorange_website_security_reports'] = [
+    'description' => 'Keeps record of all the events.',
+    'fields' => [
+      'id' => [
+        'type' => 'serial',
+        'not null' => TRUE,
+      ],
+      'ip_address' => [
+        'type' => 'varchar',
+        'length' => 40,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'uname' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'status' => [
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'timestamp' => [
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'indexes' => [
+      'uname' => ['uname'],
+      'ip_address' => ['ip_address'],
+      'timestamp' => ['timestamp'],
+    ],
+    'primary key' => ['id'],
+  ];
+
+  return $schema;
+}

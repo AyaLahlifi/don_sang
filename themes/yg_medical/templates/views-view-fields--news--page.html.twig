@@ -1,0 +1,31 @@
+
+          <div class="items wow fadeInUp">
+          <div class="news-listing">
+          <div class="row">
+            <div class="col-md-7 news-image">
+              <div class="news-images">
+               <a href="{{ fields.view_node.content }}"><img src="{{ fields.field_latest_news_image.content }}" alt="doctor-img" class="img-responsive"></a>
+               </div>
+            </div>
+            <div class="col-md-5 news-content">
+                <div class="row">
+                  <div class="col-md-12 content">
+                  <a href="{{ fields.view_node.content }}"><h3>{{ fields.field_news_title.content }}</h3></a>
+                    <div class="news-time">
+                      <i class="fa fa-clock-o"></i>
+                      <p>{{ fields.created.content }}</p>
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <p>{{ fields.name.content }}</p>
+                    </div>
+                    <h6>{{ fields.body.content }}</h6>
+
+                    {{ fields.field_detailed_news.content }}
+                    <a href="{{ fields.view_node.content }}" class="btn btn-infos">Read More</a>
+                  </div>
+              </div>
+            </div>
+          </div>
+          </div>
+      </div>
+
+              

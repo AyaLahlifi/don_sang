@@ -1,0 +1,348 @@
+aws_bedrock_chat.settings:
+  type: config_object
+  label: 'AWS Bedrock Chat settings'
+  mapping:
+    aws_access_key:
+      type: string
+      label: 'AWS Access Key ID'
+    aws_authentication_method:
+      type: string
+      label: 'AWS Authentication Method'
+    aws_profile:
+      type: string
+      label: 'AWS Profile'
+    aws_secret_key:
+      type: string
+      label: 'AWS Secret Access Key'
+    model_arn:
+      type: string
+      label: 'Model ARN'
+    region:
+      type: string
+      label: 'AWS Region'
+    customize:
+      type: mapping
+      label: 'Customization'
+      mapping:
+        close:
+          type: mapping
+          label: 'Close Icon Customization'
+          mapping:
+            url:
+              type: string
+              label: 'Close Icon URL'
+            upload:
+              type: sequence
+              label: 'Close Icon Upload'
+              sequence:
+                - type: string
+            use_uploaded:
+              type: integer
+              label: 'Use Uploaded Close Icon'
+        display_related_files:
+          type: integer
+          label: 'Display Related Files'
+        exclude_duplicate_files:
+          type: integer
+          label: 'Exclude Duplicate Files'
+        interface:
+          type: mapping
+          label: 'Interface'
+          mapping:
+            chat_width:
+              type: string
+              label: 'Chat Container Width'
+            disable_shadow:
+              type: integer
+              label: 'Disable Chat Container Shadow'
+            header_text:
+              type: text
+              label: 'Header Text'
+            start_text:
+              type: text
+              label: 'Start Text'
+            user_input_placeholder:
+              type: text
+              label: 'User Input Placeholder'
+            style:
+              type: mapping
+              label: 'Style'
+              mapping:
+                header:
+                  type: mapping
+                  label: 'Header Style'
+                  mapping:
+                    background_color:
+                      type: mapping
+                      label: 'Header Background Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                header_text:
+                  type: mapping
+                  label: 'Header Text Style'
+                  mapping:
+                    color:
+                      type: mapping
+                      label: 'Header Text Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                input_focus:
+                  type: mapping
+                  label: 'Input Text Focus Style'
+                  mapping:
+                    border:
+                      type: mapping
+                      label: 'Input Text Focus Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                main:
+                  type: mapping
+                  label: 'Main Style'
+                  mapping:
+                    background:
+                      type: mapping
+                      label: 'Main Background'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                    border_color:
+                      type: mapping
+                      label: 'Main Border Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                response:
+                  type: mapping
+                  label: 'Response Style'
+                  mapping:
+                    background_color:
+                      type: mapping
+                      label: 'Response Background Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                response_text:
+                  type: mapping
+                  label: 'Response Text Style'
+                  mapping:
+                    color:
+                      type: mapping
+                      label: 'Response Text Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                submit_focus:
+                  type: mapping
+                  label: 'Submit Button Focus Style'
+                  mapping:
+                    outline:
+                      type: mapping
+                      label: 'Submit Button Focus Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                submit_inner_bottom:
+                  type: mapping
+                  label: 'Submit Button Inner Bottom Style'
+                  mapping:
+                    fill:
+                      type: mapping
+                      label: 'Submit Button Inner Bottom Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                submit_inner_top:
+                  type: mapping
+                  label: 'Submit Button Inner Top Style'
+                  mapping:
+                    fill:
+                      type: mapping
+                      label: 'Submit Button Inner Top Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                submit_outer:
+                  type: mapping
+                  label: 'Submit Button Outer Style'
+                  mapping:
+                    fill:
+                      type: mapping
+                      label: 'Submit Button Outer Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                toggle_inner:
+                  type: mapping
+                  label: 'Toggle Button Inner Style'
+                  mapping:
+                    fill:
+                      type: mapping
+                      label: 'Toggle Button Inner Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                toggle_outer:
+                  type: mapping
+                  label: 'Toggle Button Outer Style'
+                  mapping:
+                    fill:
+                      type: mapping
+                      label: 'Toggle Button Outer Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                user:
+                  type: mapping
+                  label: 'User Style'
+                  mapping:
+                    background_color:
+                      type: mapping
+                      label: 'User Text Background Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+                user_text:
+                  type: mapping
+                  label: 'User Text Style'
+                  mapping:
+                    color:
+                      type: mapping
+                      label: 'User Text Color'
+                      mapping:
+                        color_code:
+                          type: string
+                          label: 'Color Code'
+                        color_picker:
+                          type: string
+                          label: 'Color Picker'
+        loading:
+          type: mapping
+          label: 'Loading Icon Customization'
+          mapping:
+            url:
+              type: string
+              label: 'Loading Icon URL'
+            upload:
+              type: sequence
+              label: 'Loading Icon Upload'
+              sequence:
+                - type: string
+            use_uploaded:
+              type: integer
+              label: 'Use Uploaded Loading Icon'
+        response:
+          type: mapping
+          label: 'Response Icon Customization'
+          mapping:
+            url:
+              type: string
+              label: 'Response Icon URL'
+            upload:
+              type: sequence
+              label: 'Response Icon Upload'
+              sequence:
+                - type: string
+            use_uploaded:
+              type: integer
+              label: 'Use Uploaded Response Icon'
+        user:
+          type: mapping
+          label: 'User Icon Customization'
+          mapping:
+            url:
+              type: string
+              label: 'User Icon URL'
+            upload:
+              type: sequence
+              label: 'User Icon Upload'
+              sequence:
+                - type: string
+            use_uploaded:
+              type: integer
+              label: 'Use Uploaded User Icon'
+        toggle:
+          type: mapping
+          label: 'Toggle Icon Customization'
+          mapping:
+            url:
+              type: string
+              label: 'Toggle Icon URL'
+            upload:
+              type: sequence
+              label: 'Toggle Icon Upload'
+              sequence:
+                - type: string
+            use_uploaded:
+              type: integer
+              label: 'Use Uploaded Toggle Icon'
+    disable_api:
+      type: boolean
+      label: 'Disable API'
+    debug:
+      type: boolean
+      label: 'Debug'
+    knowledge_base_id:
+      type: text
+      label: 'Knowledge Base ID'
+    search_type:
+      type: string
+      label: 'Search Type'

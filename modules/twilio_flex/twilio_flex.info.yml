@@ -1,0 +1,12 @@
+name: Twilio Flex
+type: module
+description: 'Flex WebChat is a chat widget that you can embed on your website. It is natively integrated with the Flex Contact Center.'
+package: Web services
+
+core_version_requirement: ^10.0
+configure: twilio_flex.settings
+
+# Information added by Drupal.org packaging script on 2023-11-26
+version: '1.0.2'
+project: 'twilio_flex'
+datestamp: 1700982984

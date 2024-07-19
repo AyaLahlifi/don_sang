@@ -1,0 +1,23 @@
+@use "_options" as *;
+@use "sass:list";
+@use "sass:map";
+
+:root {
+    // Provide font-size defaults not included in olivero
+    --font-size-xl: 1.5rem;
+    --font-size-xxl: 2rem;
+
+    // Provide line-heights not included in olivero
+    --line-height-l: 2rem;
+    --line-height-xl: 2.25rem;
+    --line-height-xxl: 2.5rem;
+}
+
+@each $size in map.keys($size_options) {
+    @if not($size =='m') {
+        .fs-#{$size} {
+            font-size: var(--font-size-#{$size});
+            line-height: if(list.index((xxs, xs, s), $size), var(--line-height-s), var(--line-height-#{$size}));
+        }
+    }
+}

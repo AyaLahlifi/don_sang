@@ -1,0 +1,11 @@
+name: 'AWS Bedrock Chat'
+type: module
+description: 'A customizable chat module that integrates with AWS Bedrock to produce chat responses via generative AI.'
+core_version_requirement: ^10
+package: Custom
+configure: aws_bedrock_chat.settings
+
+# Information added by Drupal.org packaging script on 2024-05-14
+version: '1.0.1'
+project: 'aws_bedrock_chat'
+datestamp: 1715715589

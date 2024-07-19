@@ -1,0 +1,27 @@
+global-styling:
+  css:
+    base:
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css': { type: external, minified: true }
+      'https://fonts.googleapis.com/css?family=Poppins': { type: external, minified: true }
+      'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css': { type: external, minified: true }
+      'https://toert.github.io/Isolated-Bootstrap/versions/4.0.0-beta/iso_bootstrap4.0.0min.css': { type: external, minified: true }
+      'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css': { type: external, minified: true }
+      css/carousel.css: {}
+      # css/animate.css: {}
+      css/style.css: {}
+      
+
+  js:
+    # 'https://code.jquery.com/jquery-3.1.1.slim.min.js': { type: external, minified: true }
+    # 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js': { type: external, minified: true }
+    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js': { type: external, minified: true }
+    'https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/js/bootstrap-datepicker.min.js': { type: external, minified: true }    
+    js/carousel.js: {}
+    js/main.js: {}
+
+
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/modernizr
+    - core/drupal

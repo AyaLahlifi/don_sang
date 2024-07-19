@@ -1,0 +1,6 @@
+mailgo.global_config_form:
+  title: 'MailGo'
+  route_name: mailgo.global_config_form
+  description: 'MailGo module configuration'
+  parent: system.admin_config_content
+  weight: 99

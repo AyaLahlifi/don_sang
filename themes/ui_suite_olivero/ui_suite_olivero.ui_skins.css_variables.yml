@@ -1,0 +1,258 @@
+# Colors
+color--primary-hue:
+  category: Colors
+  label: Primary Hue
+  type: number
+  weight: 0
+  default_values:
+    :root: 202
+color--primary-saturation:
+  category: Colors
+  label: Primary Saturation
+  type: textfield
+  weight: 1
+  default_values:
+    :root: 79%
+color--primary-lightness:
+  category: Colors
+  label: Primary Lightness
+  type: textfield
+  weight: 2
+  default_values:
+    :root: 79
+color--gray-hue:
+  category: Colors
+  label: Gray Hue
+  type: number
+  weight: 3
+  default_values:
+    :root: 201
+color--gray-saturation:
+  category: Colors
+  label: Gray Saturation
+  type: textfield
+  weight: 4
+  default_values:
+    :root: 15%
+color--black:
+  category: Colors
+  label: Black
+  type: color
+  weight: 5
+  default_values:
+    :root: "#000000"
+color--white:
+  category: Colors
+  label: White
+  type: color
+  weight: 6
+  default_values:
+    :root: "#ffffff"
+color--red:
+  category: Colors
+  label: Red
+  type: color
+  weight: 7
+  default_values:
+    :root: "#e33f1e"
+color--gold:
+  category: Colors
+  label: Gold
+  type: color
+  weight: 8
+  default_values:
+    :root: "#fdca40"
+color--green:
+  category: Colors
+  label: Green
+  type: color
+  weight: 9
+  default_values:
+    :root: "#3fa21c"
+
+# Text Colors
+color-text-neutral-soft:
+  category: Text Colors
+  label: Neutral Soft
+  type: textfield
+  weight: 0
+  default_values:
+    :root: var(--color--gray-45)
+color-text-neutral-medium:
+  category: Text Colors
+  label: Neutral Medium
+  type: textfield
+  weight: 1
+  default_values:
+    :root: var(--color--gray-20)
+color-text-neutral-loud:
+  category: Text Colors
+  label: Neutral Loud
+  type: textfield
+  weight: 2
+  default_values:
+    :root: var(--color--gray-5)
+color-text-primary-medium:
+  category: Text Colors
+  label: Primary Medium
+  type: textfield
+  weight: 3
+  default_values:
+    :root: var(--color--primary-40)
+color-text-primary-loud:
+  category: Text Colors
+  label: Primary Loud
+  type: textfield
+  weight: 4
+  default_values:
+    :root: var(--color--primary-30)
+
+# Line Height
+line-height-s:
+  category: Line Height
+  label: Small
+  type: textfield
+  weight: 0
+  default_values:
+    :root: 1.125rem
+line-height-base:
+  category: Line Height
+  label: Base
+  type: textfield
+  weight: 1
+  default_values:
+    :root: 1.6875rem
+line-height-l:
+  category: Line Height
+  label: Large
+  type: textfield
+  weight: 2
+  default_values:
+    :root: 2rem
+line-height-xl:
+  category: Line Height
+  label: XLarge
+  type: textfield
+  weight: 3
+  default_values:
+    :root: 2.25rem
+line-height-xxl:
+  category: Line Height
+  label: XXLarge
+  type: textfield
+  weight: 4
+  default_values:
+    :root: 2.5rem
+
+# Font Size
+font-size-xxs:
+  category: Font Size
+  label: XXSmall
+  type: textfield
+  weight: 0
+  default_values:
+    :root: 0.75rem
+font-size-xs:
+  category: Font Size
+  label: XSmall
+  type: textfield
+  weight: 1
+  default_values:
+    :root: 0.8125rem
+font-size-s:
+  category: Font Size
+  label: Small
+  type: textfield
+  weight: 2
+  default_values:
+    :root: 0.875rem
+font-size-base:
+  category: Font Size
+  label: Base
+  type: textfield
+  weight: 3
+  default_values:
+    :root: 1rem
+font-size-l:
+  category: Font Size
+  label: Large
+  type: textfield
+  weight: 4
+  default_values:
+    :root: 1.125rem
+font-size-xl:
+  category: Font Size
+  label: XLarge
+  type: textfield
+  weight: 5
+  default_values:
+    :root: 1.5rem
+font-size-xxl:
+  category: Font Size
+  label: XLarge
+  type: textfield
+  weight: 5
+  default_values:
+    :root: 2rem
+
+#Layout
+sp:
+  category: Layout
+  label: Space
+  type: textfield
+  default_values:
+    :root: 1.125rem
+container-padding:
+  category: Layout
+  label: Container Padding
+  type: textfield
+  default_values:
+    :root: var(--sp2)
+content-left:
+  category: Layout
+  label: Content Left
+  type: textfield
+  default_values:
+    :root: 1.6875rem
+max-width:
+  category: Layout
+  label: Max Width
+  type: textfield
+  default_values:
+    :root: 84.375rem
+max-bg-color:
+  category: Layout
+  label: Max BG Color
+  type: textfield
+  default_values:
+    :root: 98.125rem
+mobile-nav-width:
+  category: Layout
+  label: Mobile Navigation Width
+  type: textfield
+  default_values:
+    :root: 31.25rem
+site-header-height-wide:
+  category: Layout
+  label: Site Header Height Wide
+  type: textfield
+  default_values:
+    :root: var(--sp10)
+border-radius:
+  category: Layout
+  label: Border Radius
+  type: textfield
+  default_values:
+    :root: 0.1875rem
+grid-col-count:
+  category: Layout
+  label: Grid Column Count
+  type: number
+  default_values:
+    :root: 14
+grid-gap:
+  category: Layout
+  label: Grid Gap
+  type: textfield
+  default_values:
+    :root: var(--sp)

@@ -1,0 +1,9 @@
+mailgo:
+  theme: 'light'
+  show_footer: true
+  actions:
+    gmail: true
+    outlook: true
+    yahoo: true
+    whatsapp: true
+    skype: true

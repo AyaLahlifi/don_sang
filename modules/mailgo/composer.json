@@ -1,0 +1,18 @@
+{
+    "name": "drupal/mailgo",
+    "description": "Module implements MailGo library behaviour",
+    "type": "drupal-module",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Nico Grienauer (Grienauer)",
+            "role": "Maintainer"
+        },
+        {
+            "name": "Nikolay Grachev (Granik)",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}

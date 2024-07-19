@@ -1,0 +1,27 @@
+<div class="items wow fadeInUp">
+  <div class="doctor-listing">
+    <div class="row">
+      <div class="col-md-3 doctor-image">
+        <div class="doctor-image">
+          <img src="{{ fields.field_docters_image.content}}" alt="doctor-img" class="img-responsive">
+        </div>
+      </div>
+      <div class="col-md-9 doctors-content">
+        <div class="row">
+          <div class="col-md-12 content">
+            <h5>{{ fields.field_doctors_name.content}}</h5>
+            <h6>{{ fields.field_doctors_designation.content}}</h6>
+                {{ fields.body.content}}
+              <div class="appoinment-time">
+                <i class="fa fa-stethoscope"></i>
+                <p>{{ fields.field_specialist.content}}</p>
+                <i class="fa fa-clock-o"></i>
+                <p>{{ fields.field_working_time.content}}</p>
+              </div>
+              <a href="{{url('<front>')}}#schedule" class="btn btn-infos">Schedule Appointment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

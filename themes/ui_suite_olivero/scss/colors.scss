@@ -1,0 +1,24 @@
+@use "sass:string";
+@use "color";
+
+@each $color in neutral, primary {
+    $c: string.slice($color, 1, 1);
+    @each $intensity in soft, medium, loud {
+        $i: string.slice($intensity, 1, 1);
+        .ct-#{$c}#{$i} {
+            color: var(--color-text-#{$color}-#{$intensity});
+        }
+        .ch-#{$c}#{$i} :is(h2, h3, h4, h5, h6) {
+            color: var(--color-text-#{$color}-#{$intensity});
+        }
+    }
+}
+
+@each $color in wrap, core {
+    .ct-#{$color} {
+        color: color.apply($color);
+    }
+    .ch-#{$color} :is(h2, h3, h4, h5, h6) {
+        color: color.apply($color);
+    }
+}

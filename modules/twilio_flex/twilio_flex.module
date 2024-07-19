@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Twilio flex primary module file
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Url;
+
+/**
+ * Implements hook_help().
+ */
+function twilio_flex_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.twilio_flex':
+      $output = '<p>' . t('<a href=":twilio_flex_url">Flex WebChat</a> is a chat widget that you can embed on your website. The widget helps your customers chat with an agent without needing to leave your webpage. It is natively integrated with the Flex Contact Center. It can be configured <a href=":twilio_config_url">here</a>.',
+          [
+            ':twilio_flex_url' => 'https://www.twilio.com/docs/flex/developer/messaging/webchat/setup',
+            ':twilio_config_url' => Url::fromRoute('twilio_flex.settings')->toString(),
+          ]) . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function twilio_flex_page_attachments(array &$page) {
+  if (!\Drupal::currentUser()->hasPermission('access twilio flex')) {
+    return;
+  }
+
+  // Exit if settings are empty.
+  $settings = \Drupal::configFactory()->get('twilio_flex.settings')->getOriginal();
+  foreach ($settings as $name => $value) {
+    if ((strpos($name, 'twilio_flex') !== FALSE) && empty($value)) {
+      return;
+    }
+  }
+
+  $page['#attached']['library'][] = 'twilio_flex/twilio-flex';
+  $page['#attached']['drupalSettings']['twilioFlex'] = $settings;
+}

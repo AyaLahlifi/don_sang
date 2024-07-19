@@ -1,0 +1,7 @@
+'access twilio flex':
+  title: 'Access twilio flex'
+  description: 'Use twilio flex webchat.'
+
+'administer twilio flex':
+  title: 'Administer twilio flex'
+  description: 'Administer twilio flex webchat parameters.'

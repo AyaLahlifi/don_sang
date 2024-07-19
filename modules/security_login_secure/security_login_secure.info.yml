@@ -1,0 +1,10 @@
+name: MiniOrange Website Security
+type: module
+description: 'Provides enterprise level security, protecting your Drupal site from hackers and malwares.'
+package: miniOrange
+core_version_requirement: ^8 || ^9 || ^10
+core: 8.x
+# Information added by Drupal.org packaging script on 2024-01-05
+version: '8.x-1.21'
+project: 'security_login_secure'
+datestamp: 1704456585

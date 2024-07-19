@@ -1,0 +1,9 @@
+services:
+  aws_bedrock_chat.bedrock_client:
+    class: Drupal\aws_bedrock_chat\BedrockClient
+    arguments: ['@config.factory', '@language_manager', '@http_client']
+  aws_bedrock_chat.chat_controller:
+    class: Drupal\aws_bedrock_chat\Controller\ChatController
+    arguments: ['@aws_bedrock_chat.bedrock_client', '@file_url_generator']
+    tags:
+      - { name: controller.service_arguments }

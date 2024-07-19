@@ -1,0 +1,22 @@
+uuid: 6a8f064c-d9d4-48a6-9d62-bc66e24d025e
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dark_awesome
+_core:
+  default_config_hash: Go9cynnO0utT3NC9oi4eXtfEubo39mbIuKAJjsXGYPk
+id: dark_awesome_breadcrumbs
+theme: dark_awesome
+region: content
+weight: -3
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }

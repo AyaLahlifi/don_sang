@@ -1,0 +1,35 @@
+security_login_secure.configuration:
+  route_name: security_login_secure.configuration
+  title: 'Login Security'
+  weight: 10
+  base_route: security_login_secure.configuration
+
+security_login_secure.blocking:
+  route_name: security_login_secure.blocking
+  title: 'Site Security'
+  weight: 20
+  base_route: security_login_secure.configuration
+
+security_login_secure.notifications:
+  route_name: security_login_secure.notifications
+  title: 'Notifications'
+  weight: 30
+  base_route: security_login_secure.configuration
+
+security_login_secure.reports:
+  route_name: security_login_secure.reports
+  title: 'Reports'
+  weight: 40
+  base_route: security_login_secure.configuration
+
+security_login_secure.licensing:
+  route_name: security_login_secure.licensing
+  title: 'Upgrade Plans'
+  weight: 50
+  base_route: security_login_secure.configuration
+
+security_login_secure.customer_setup:
+  route_name: security_login_secure.customer_setup
+  title: 'Register/ Login'
+  weight: 60
+  base_route: security_login_secure.configuration

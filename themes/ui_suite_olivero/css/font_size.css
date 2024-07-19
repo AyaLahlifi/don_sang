@@ -1,0 +1,37 @@
+:root {
+  --font-size-xl: 1.5rem;
+  --font-size-xxl: 2rem;
+  --line-height-l: 2rem;
+  --line-height-xl: 2.25rem;
+  --line-height-xxl: 2.5rem;
+}
+
+.fs-xxs {
+  font-size: var(--font-size-xxs);
+  line-height: var(--line-height-s);
+}
+
+.fs-xs {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-s);
+}
+
+.fs-s {
+  font-size: var(--font-size-s);
+  line-height: var(--line-height-s);
+}
+
+.fs-l {
+  font-size: var(--font-size-l);
+  line-height: var(--line-height-l);
+}
+
+.fs-xl {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-xl);
+}
+
+.fs-xxl {
+  font-size: var(--font-size-xxl);
+  line-height: var(--line-height-xxl);
+}

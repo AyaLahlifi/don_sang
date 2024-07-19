@@ -1,0 +1,21 @@
+color_text:
+  category: Color
+  label: Text
+  options:
+    ct-ns: Neutral Soft
+    ct-nm: Neutral Medium
+    ct-nl: Neutral Loud
+    ct-ps: Primary Soft
+    ct-pm: Primary Medium
+    ct-pl: Primary Loud
+
+color_heading:
+  category: Color
+  label: Heading
+  options:
+    ch-ns: Neutral Soft
+    ch-nm: Neutral Medium
+    ch-nl: Neutral Loud
+    ch-ps: Primary Soft
+    ch-pm: Primary Medium
+    ch-pl: Primary Loud

@@ -1,0 +1,18 @@
+.button--small {
+  line-height: var(--line-height-s);
+  font-weight: normal;
+}
+.button--small:is(:hover, :focus) {
+  font-weight: normal;
+}
+
+.button--tiny {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-xs);
+  padding-block: calc((var(--sp2-5) - var(--line-height-s)) / 2);
+  padding-inline: var(--sp1);
+  font-weight: normal;
+}
+.button--tiny:is(:hover, :focus) {
+  font-weight: normal;
+}

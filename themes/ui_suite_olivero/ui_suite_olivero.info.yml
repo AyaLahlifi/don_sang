@@ -1,0 +1,47 @@
+name: UI Suite Olivero
+type: theme
+base theme: olivero
+description: Olivero, friendly to site-builders, due to implementation of modules from 'UI Initiative'
+package: Themes
+core_version_requirement: ^9 || ^10
+libraries:
+  - ui_suite_olivero/global
+
+regions:
+  header: Header
+  primary_menu: Primary menu
+  secondary_menu: Secondary menu
+  hero: Hero (full width)
+  highlighted: Highlighted
+  breadcrumb: Breadcrumb
+  social: Social Bar
+  content_above: Content Above
+  content: Content
+  sidebar: Sidebar
+  content_below: Content Below
+  footer_top: Footer Top
+  footer_bottom: Footer Bottom
+
+dependencies:
+  - drupal:inline_form_errors
+  - layout_options:layout_options
+  - ui_patterns:ui_patterns
+  - ui_patterns:ui_patterns_library
+  - ui_patterns_settings:ui_patterns_settings
+  - ui_styles:ui_styles
+  - ui_skins:ui_skins
+
+libraries-override:
+  olivero/global-styling:
+    css:
+      component:
+        css/components/form-textarea.css: css/components/form-textarea.css
+  webform/webform.element.options:
+    css:
+      component:
+        css/webform.element.options.css: css/webform/webform.element.options.css
+
+# Information added by Drupal.org packaging script on 2023-11-13
+version: '1.0.0-rc1'
+project: 'ui_suite_olivero'
+datestamp: 1699864789

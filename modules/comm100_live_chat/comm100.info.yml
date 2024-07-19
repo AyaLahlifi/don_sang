@@ -1,0 +1,11 @@
+name: Comm100 Live Chat
+type: module
+description: Comm100 Live Chat for Drupal
+package: Comm100
+configure: comm100.settings
+core_version_requirement: ^8.8 || ^9 || ^10
+
+# Information added by Drupal.org packaging script on 2023-02-02
+version: '8.x-2.3'
+project: 'comm100_live_chat'
+datestamp: 1675314630

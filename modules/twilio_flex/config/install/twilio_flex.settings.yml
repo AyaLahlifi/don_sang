@@ -1,0 +1,6 @@
+twilio_flex_account_sid: ''
+twilio_flex_flow_sid: ''
+twilio_flex_main_header_title: 'Chat with Us'
+twilio_flex_msg_canvas_welcome: 'Welcome to customer service'
+twilio_flex_msg_canvas_predefined_author: 'Bot'
+twilio_flex_msg_canvas_predefined_body: 'Hi there! How can we help you today?'

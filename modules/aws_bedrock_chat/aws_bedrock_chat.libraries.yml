@@ -1,0 +1,24 @@
+chat_style:
+  version: VERSION
+  css:
+    theme:
+      css/aws_bedrock_chat.css: {}
+  js:
+    js/aws_bedrock_chat.js: {}
+    js/dynamic_styles.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/once
+    - core/drupal.debounce
+
+color_picker:
+  version: VERSION
+  css:
+    theme:
+      css/color-picker.css: {}
+  js:
+    js/color-picker-sync.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

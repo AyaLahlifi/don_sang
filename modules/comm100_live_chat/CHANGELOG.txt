@@ -1,0 +1,2 @@
+--- version 2.0.2 ---
+  Integrate Comm100 Live Chat with Drupal 8

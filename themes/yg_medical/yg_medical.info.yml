@@ -1,0 +1,29 @@
+name: YG Medical
+type: theme
+description: 'A Medical Drupal theme for your Hospital'
+core_version_requirement: ^9 || ^10
+base theme: bootstrap_barrio
+
+regions:
+  highlighted: Highlighted
+  header: Header
+  primary_menu: Primary menu
+  slider: slider
+  top_banner: top banner
+  bread_crumb: breadcrumb
+  content: Content
+  footer_col_1: footer first
+  footer_col_2: footer second
+  footer_col_3: footer third
+  footer_col_4: footer four
+  contact: contact
+  google_map: map
+  contact_form: webform
+
+libraries:
+  - yg_medical/global-styling  
+
+# Information added by Drupal.org packaging script on 2024-05-07
+version: '2.0.1'
+project: 'yg_medical'
+datestamp: 1715078873

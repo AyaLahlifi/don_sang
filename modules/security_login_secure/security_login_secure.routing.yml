@@ -1,0 +1,69 @@
+security_login_secure.customer_setup:
+  path: /admin/config/people/security_login_secure/WebsiteSecurityCustomerSetup
+  defaults:
+    _title: 'Website Security &nbsp;&nbsp;<a class="button button--primary js-form-submit mo_top_bar_button form-submit use-ajax" href="ContactUs" data-dialog-type = "modal" data-dialog-options="{&quot;width&quot;:&quot;50%&quot;}" >Contact Us</a>'
+    _form: \Drupal\security_login_secure\Form\WebsiteSecurityCustomerSetup
+  requirements:
+    _permission: 'administer site configuration'
+
+security_login_secure.configuration:
+  path: /admin/config/people/security_login_secure/WebsiteSecurityConfiguration
+  defaults:
+    _title: 'Website Security &nbsp;&nbsp;<a class="button button--primary js-form-submit mo_top_bar_button form-submit use-ajax" href="ContactUs" data-dialog-type = "modal" data-dialog-options="{&quot;width&quot;:&quot;50%&quot;}" >Contact Us</a>'
+    _form: \Drupal\security_login_secure\Form\WebsiteSecurityConfiguration
+  requirements:
+    _permission: 'administer site configuration'
+
+security_login_secure.blocking:
+  path: /admin/config/people/security_login_secure/WebsiteSecurityIPBlocking
+  defaults:
+    _title: 'Website Security &nbsp;&nbsp;<a class="button button--primary js-form-submit mo_top_bar_button form-submit use-ajax" href="ContactUs" data-dialog-type = "modal" data-dialog-options="{&quot;width&quot;:&quot;50%&quot;}" >Contact Us</a>'
+    _form: \Drupal\security_login_secure\Form\WebsiteSecurityIPBlocking
+  requirements:
+    _permission: 'administer site configuration'
+
+security_login_secure.notifications:
+  path: /admin/config/people/security_login_secure/WebsiteSecurityNotifications
+  defaults:
+    _title: 'Website Security &nbsp;&nbsp;<a class="button button--primary js-form-submit mo_top_bar_button form-submit use-ajax" href="ContactUs" data-dialog-type = "modal" data-dialog-options="{&quot;width&quot;:&quot;50%&quot;}" >Contact Us</a>'
+    _form: \Drupal\security_login_secure\Form\WebsiteSecurityNotifications
+  requirements:
+    _permission: 'administer site configuration'
+
+security_login_secure.reports:
+  path: /admin/config/people/security_login_secure/WebsiteSecurityReports
+  defaults:
+    _title: 'Website Security &nbsp;&nbsp;<a class="button button--primary js-form-submit mo_top_bar_button form-submit use-ajax" href="ContactUs" data-dialog-type = "modal" data-dialog-options="{&quot;width&quot;:&quot;50%&quot;}" >Contact Us</a>'
+    _form: \Drupal\security_login_secure\Form\WebsiteSecurityReports
+  requirements:
+    _permission: 'administer site configuration'
+
+security_login_secure.licensing:
+  path: /admin/config/people/security_login_secure/WebsiteSecurityLicensing
+  defaults:
+    _title: 'Website Security &nbsp;&nbsp;<a class="button button--primary js-form-submit mo_top_bar_button form-submit use-ajax" href="ContactUs" data-dialog-type = "modal" data-dialog-options="{&quot;width&quot;:&quot;50%&quot;}" >Contact Us</a>'
+    _form: \Drupal\security_login_secure\Form\WebsiteSecurityLicensing
+  requirements:
+    _permission: 'administer site configuration'
+
+security_login_secure.error_page:
+  path: /error_403_page
+  defaults:
+    _controller: '\Drupal\security_login_secure\Controller\security_login_secureController::website_security_error'
+  requirements:
+    _access: 'TRUE'
+
+security_login_secure.feedback:
+  path: /feedback
+  defaults:
+    _controller: '\Drupal\security_login_secure\Controller\security_login_secureController::website_security_feedback_func'
+  requirements:
+    _permission: 'administer site configuration'
+
+security_login_secure.contact_us:
+  path: /admin/config/people/security_login_secure/ContactUs
+  defaults:
+    _title: "Contact Us"
+    _form: \Drupal\security_login_secure\Form\WebsiteSecurityCustomerRequest
+  requirements:
+    _permission: 'administer site configuration'

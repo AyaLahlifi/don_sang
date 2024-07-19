@@ -1,0 +1,21 @@
+{
+  "name": "drupal/aws_bedrock_chat",
+  "description": "Provides a chat bot interface to use with AWS Bedrock services.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+      {
+          "name": "Rob Morris",
+          "homepage": "https://www.drupal.org/u/robbymo",
+          "role": "Maintainer"
+      }
+  ],
+  "homepage": "https://www.drupal.org/project/aws_bedrock_chat",
+  "support": {
+      "issues": "https://www.drupal.org/project/issues/aws_bedrock_chat",
+      "source": "https://git.drupal.org/project/aws_bedrock_chat.git"
+  },
+  "require": {
+      "aws/aws-sdk-php": "^3.301"
+  }
+}

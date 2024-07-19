@@ -1,0 +1,7 @@
+twilio_flex.settings:
+  path: 'admin/config/services/twilio_flex'
+  defaults:
+    _form: '\Drupal\twilio_flex\Form\TwilioFlexSettingsForm'
+    _title: 'Twilio Flex settings'
+  requirements:
+    _permission: 'administer twilio flex'

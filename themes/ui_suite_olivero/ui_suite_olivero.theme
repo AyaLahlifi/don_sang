@@ -1,0 +1,22 @@
+<?php
+
+use \Drupal\Core\Link;
+
+function ui_suite_olivero_form_system_theme_settings_alter(&$variables) {
+  // Remove olivero color management to force user to manage colors with drupal/ui_skins
+  $variables['olivero_settings']['olivero_utilities']['olivero_color_scheme'] = [
+    '#theme' => 'status_messages',
+    '#message_list' => [
+      'warning' => [
+        t("<em>Primary base Color</em> selector has been removed because <em>UI Suite Olivero</em> uses <em>drupal/ui_skins</em> for color customization. Visit @link to setup colors!",
+          ['@link' => Link::createFromRoute(t("CSS Variables"), 'ui_skins.overview')->toString()]
+        )
+      ]
+    ]
+  ];
+}
+
+function ui_suite_olivero_preprocess_html(&$variables): void {
+  // Remove olivero color management to force user to manage colors with drupal/ui_skins
+  $variables['html_attributes']->removeAttribute('style');
+}

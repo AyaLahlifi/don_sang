@@ -1,0 +1,25 @@
+uuid: cfc0e60b-5d10-480e-8259-d12649df2f49
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dark_awesome
+_core:
+  default_config_hash: 53ZXckHUEY-SsmFI2rq8sYNAApkSMMh-FXGApDmNpQg
+id: dark_awesome_branding
+theme: dark_awesome
+region: site_logo
+weight: 0
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: false
+  use_site_slogan: false
+visibility: {  }

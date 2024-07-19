@@ -1,0 +1,19 @@
+/* Chat Customization Color Picker Styles */
+
+.aws-bedrock-chat-color-container {
+  display: flex;
+  align-items: center;
+}
+
+.aws-bedrock-chat-color-container .form-item {
+  margin-right: 15px;
+}
+
+.aws-bedrock-chat-color-container .abc-color-picker {
+  padding: 1px 3px 0px 2px;
+  margin-top: -2px;
+}
+
+div.aws-bedrock-chat-color-container div {
+  margin: 3px 10px;
+}

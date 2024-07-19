@@ -1,0 +1,18 @@
+<div id="aws-bedrock-chat-container">
+  <div class="aws-bedrock-chat-main">
+    {{ form }}
+  </div>
+  <div class="aws-bedrock-chat-icon">
+  {% if toggle_icon_url %}
+    <img src="{{ toggle_icon_url }}" alt="Chat Toggle Icon"/>
+  {% else %}
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="75" height="75" viewBox="0 0 256 256" xml:space="preserve">
+      <defs></defs>
+      <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
+	      <path d="M 45 0 C 20.147 0 0 20.147 0 45 c 0 24.853 20.147 45 45 45 s 45 -20.147 45 -45 C 90 20.147 69.853 0 45 0 z M 45.094 69.113 c -3.79 -0.001 -7.541 -0.892 -10.906 -2.583 l -11.072 2.904 c -0.167 0.044 -0.338 0.065 -0.507 0.065 c -0.527 0 -1.041 -0.209 -1.422 -0.594 c -0.502 -0.508 -0.696 -1.245 -0.507 -1.935 l 2.949 -10.77 c -1.857 -3.498 -2.834 -7.424 -2.833 -11.406 C 20.8 31.399 31.701 20.5 45.094 20.5 c 6.498 0.002 12.603 2.533 17.189 7.126 c 4.587 4.592 7.111 10.697 7.109 17.189 C 69.388 58.213 58.487 69.113 45.094 69.113 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+	      <path d="M 45.093 24.5 c -11.188 0 -20.293 9.105 -20.298 20.298 c -0.001 3.565 0.936 7.075 2.709 10.147 c 0.267 0.463 0.337 1.013 0.197 1.528 l -2.249 8.213 l 8.47 -2.222 c 0.167 -0.044 0.337 -0.065 0.507 -0.065 c 0.332 0 0.662 0.083 0.958 0.244 c 2.961 1.615 6.314 2.469 9.699 2.47 c 11.197 0 20.302 -9.106 20.307 -20.3 c 0.002 -5.424 -2.107 -10.524 -5.939 -14.36 C 55.621 26.616 50.521 24.502 45.093 24.5 z M 35.405 47 h -0.811 c -1.104 0 -2 -0.896 -2 -2 s 0.896 -2 2 -2 h 0.811 c 1.104 0 2 0.896 2 2 S 36.51 47 35.405 47 z M 45.405 47 h -0.811 c -1.104 0 -2 -0.896 -2 -2 s 0.896 -2 2 -2 h 0.811 c 1.104 0 2 0.896 2 2 S 46.51 47 45.405 47 z M 55.405 47 h -0.811 c -1.104 0 -2 -0.896 -2 -2 s 0.896 -2 2 -2 h 0.811 c 1.104 0 2 0.896 2 2 S 56.51 47 55.405 47 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+      </g>
+    </svg>
+  {% endif %}
+  </div>
+</div>

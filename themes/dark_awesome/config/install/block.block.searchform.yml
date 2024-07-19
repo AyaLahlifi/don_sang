@@ -1,0 +1,23 @@
+uuid: 1493531f-ef28-4eff-b3e5-95f68b4dda7f
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - dark_awesome
+_core:
+  default_config_hash: eSOo0ow89JfbEXLGNTR98qDgPjQ8Q9OlQd60OhoMTbc
+id: searchform
+theme: dark_awesome
+region: header_search
+weight: 0
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search here'
+  label_display: visible
+  provider: search
+  page_id: ''
+visibility: {  }

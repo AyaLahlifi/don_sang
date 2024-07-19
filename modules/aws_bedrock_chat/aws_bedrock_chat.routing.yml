@@ -1,0 +1,32 @@
+aws_bedrock_chat.settings:
+  path: '/admin/config/services/aws-bedrock-chat/settings'
+  defaults:
+    _form: '\Drupal\aws_bedrock_chat\Form\ConfigForm'
+    _title: 'AWS Bedrock Chat Configuration'
+  requirements:
+    _permission: 'administer site configuration'
+
+aws_bedrock_chat.customize_settings:
+  path: '/admin/config/services/aws-bedrock-chat/customize'
+  defaults:
+    _form: '\Drupal\aws_bedrock_chat\Form\CustomizeForm'
+    _title: 'AWS Bedrock Chat Customization'
+  requirements:
+    _permission: 'customize aws bedrock chat'
+
+aws_bedrock_chat.get_response:
+  path: '/aws-bedrock-chat/get-response'
+  defaults:
+    _controller: '\Drupal\aws_bedrock_chat\Controller\ChatController::responseMessage'
+    _title: 'Get Response Message'
+  methods:  [POST]
+  requirements:
+    _permission: 'access content'
+
+aws_bedrock_chat.translation_settings:
+  path: '/admin/config/services/aws-bedrock-chat/translate'
+  defaults:
+    _form: '\Drupal\aws_bedrock_chat\Form\TranslationForm'
+    _title: 'AWS Bedrock Chat Translations'
+  requirements:
+    _permission: 'translate aws bedrock chat'

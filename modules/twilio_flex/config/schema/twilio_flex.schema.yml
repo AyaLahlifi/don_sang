@@ -1,0 +1,24 @@
+# Schema for the configuration files of the twilio_flex module.
+
+twilio_flex.settings:
+  type: config_object
+  label: 'Twilio flex settings'
+  mapping:
+    twilio_flex_account_sid:
+      type: string
+      label: 'Account SID'
+    twilio_flex_flow_sid:
+      type: string
+      label: 'Flex Flow SID'
+    twilio_flex_main_header_title:
+      type: string
+      label: 'Header title'
+    twilio_flex_msg_canvas_welcome:
+      type: string
+      label: 'Canvas welcome message'
+    twilio_flex_msg_canvas_predefined_author:
+      type: string
+      label: 'First message author'
+    twilio_flex_msg_canvas_predefined_body:
+      type: string
+      label: 'First message body'

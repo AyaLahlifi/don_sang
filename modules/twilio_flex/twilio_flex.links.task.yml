@@ -1,0 +1,4 @@
+twilio_flex.settings:
+  route_name: twilio_flex.settings
+  base_route: twilio_flex.settings
+  title: 'Twilio Flex Webchat Settings'

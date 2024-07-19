@@ -1,0 +1,25 @@
+<?php
+/**
+ * @file
+ * Contains install, update and uninstall functions for twilio_flex module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function twilio_flex_uninstall() {
+  \Drupal::configFactory()->getEditable('twilio_flex.settings')->delete();
+}
+
+/**
+ * Set new strings configuration.
+ */
+function twilio_flex_update_8001() {
+  \Drupal::configFactory()
+    ->getEditable('twilio_flex.settings')
+    ->set('twilio_flex_main_header_title', 'Chat with Us')
+    ->set('twilio_flex_msg_canvas_welcome', 'Welcome to customer service')
+    ->set('twilio_flex_msg_canvas_predefined_author', 'Bot')
+    ->set('twilio_flex_msg_canvas_predefined_body', 'Hi there! How can we help you today?')
+    ->save(TRUE);
+}

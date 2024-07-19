@@ -1,0 +1,5 @@
+mailgo:
+  version: VERSION
+  js:
+    https://unpkg.com/mailgo/dist/mailgo.min.js: {external: true, minified: true}
+

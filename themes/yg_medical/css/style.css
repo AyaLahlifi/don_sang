@@ -1,0 +1,1922 @@
+ /*Gentral */
+p, a, h1,h2,h3,h4,h5,h6,li{
+    font-family: "poppins";
+}
+
+
+
+h2 {
+    color: #000;
+    font-weight: bolder;
+    letter-spacing: 1px;
+    font-size: 33px;
+}    
+
+p{
+	color: #222222;
+	letter-spacing: 0.5px;
+	font-family: "poppins";
+}
+
+.contact-bg .enquiry-form div#edit-actions {
+    padding-left: 10px;
+}
+
+form .col-lg-6 .col-md-6{
+    width:100% !important;
+    padding:0 !important;
+    max-width: 100%;
+}
+input#edit-actions-submit {
+    margin-top: 0px;
+}
+.book-appoinment .form .btn{
+    width: max-content;
+}
+
+.form-group {
+    margin-bottom: 27px;
+}
+
+.enquiry-form .webform-elements {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+/* news detail page*/
+.entity-pager-list .entity-pager-item{
+    margin:0px !important;
+}
+
+.entity-pager-list .entity-pager-item a{
+    color: #fff !important;
+    text-decoration: none;  
+}
+#contact-page .contact-bg .geolocation-formatter-map-wrapper {
+    padding: 33px 20px !important;
+}
+/*End news detail page*/
+
+.col-md-6.well.js-form-item.form-item.js-form-type-date.form-item-date.js-form-item-date.form-no-label {
+    padding-left: 0px !important;
+}    
+
+.col-md-6.js-form-item.form-item.js-form-type-select.form-item-docters-list.js-form-item-docters-list.form-no-label {
+    padding-right: 0px !important;
+}
+
+.path-frontpage #docters {
+    background-color: #e6f5fa !important;
+}
+
+.path-frontpage #docters .docters-list{
+    background-color: #fff !important;
+}
+
+
+.path-frontpage #clients-testimonial{
+    background-color: #fff;
+}
+.path-frontpage #departments{
+    background-color: #e6f5fa !important;
+}
+
+.path-frontpage #departments .department-caption{
+    background-color: #fff !important;
+}
+/* Nav section*/
+
+nav#mainNav {
+    padding: 40px 0px 30px 0px;
+    border-bottom: 1px solid #e6f5fa;
+}
+
+.navbar-light .navbar-nav .nav-item a {
+    color: #222222;
+    font-weight: 500;
+    font-family: "poppins",sans-serif;
+    padding: 0px 15px;
+}
+
+.navbar-light .navbar-nav .nav-item .btn.btn-infos {
+    color: #fff !important;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 20px;
+    display: inline;
+}
+
+.navbar-light .navbar-nav .nav-item a.is-active {
+    color: #2379c2 !important;
+}
+
+.navbar-light .navbar-nav .active>.nav-item a, .navbar-light .navbar-nav .nav-item a:hover{
+	color: #2379c2;
+    text-decoration: none;
+}
+
+.navbar-fixed-top {
+    position: fixed;
+    width: 100%;
+    z-index: 759;
+    top: 0px;
+    background: #fff;
+}
+
+.toolbar-tray-open.toolbar-horizontal.toolbar-fixed .navbar-fixed-top{
+    z-index: 300 !important;
+    top: 96px !important;
+}
+
+.navbar-collapse{
+    flex-grow: 0 !important;
+}
+/* End nav section*/
+
+
+
+/* Banner slider section*/
+
+
+section#banner-slider {
+    padding-top: 113px;
+}
+#banner-slider .carousel-item img{
+    width:100%;
+}
+
+#banner-slider .carousel-caption {
+    left:-22%;
+}
+
+.carousel-caption.d-none.d-md-block {
+    text-align: left;
+    padding-bottom: 230px;
+    width: 50%;
+
+}   
+
+.carousel-caption.d-none p {
+    color: #2379c2;
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.carousel-caption.d-none h1 {
+    font-size: 54px;
+    color: #222222;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.btn.btn-infos {
+    background-color:#2379c2;
+    color: #fff;
+    font-weight: bolder;
+    border-radius: 25px;
+    padding: 10px 34px;
+    margin-top: 12px;
+    cursor: pointer;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+}
+
+.btn.btn-infos:hover{
+	background-color: rgba(80, 149, 208, 0.98);
+}
+
+#banner-slider .carousel-caption.d-none .btn.btn-infos {
+	    padding: 12px 32px;
+	    margin-top: 30px;
+}
+
+.carousel-indicators{
+	bottom: 28px;
+}
+
+.carousel-indicators li {
+    height:16px;
+    width:16px;
+    border-radius:100%;
+    background-color: transparent;
+    border: 3px solid #464648;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+.carousel-indicators .active  {
+    background-color: #2379c2 !important;
+    border: none;
+}
+/* End banner carousel*/
+
+
+/* About section */
+
+section#about {
+    padding-top: 50px;
+}
+
+.about-content {
+    padding-top: 50px;
+}
+
+#about .about-content span {
+    font-weight: bolder;
+}    
+
+#about .about-content p{
+	font-size: 17px;
+    line-height: 30px;
+}
+/* End About section */
+
+
+/* Departments section */
+#departments{
+	background-color: #e6f5fa;
+	padding: 90px 0px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.departmets-header {
+    padding-bottom: 35px;
+}
+
+#departments h2{
+	padding-bottom: 20px;
+}
+
+
+
+.departments-list {
+    padding: 0px 10px;
+}
+
+.departments-list img {
+	width: 100%;
+	border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.department-caption {
+	background-color: #fff;
+	border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.department-caption p {
+    padding: 20px;
+    margin-bottom: 0px;
+    font-weight: bolder;
+    letter-spacing: 0.5px;
+}
+
+.all-department-btn , .all-docters-btn  {
+    padding-top: 50px;
+}
+
+.all-department-btn .btn.btn-infos, .all-docters-btn .btn.btn-infos{
+    border-radius: 30px;
+    padding: 14px 34px;
+}    
+
+.departmets-header p{
+	    padding-bottom: 35px;
+}
+/* End Departments section */
+
+/* Features section */
+#features{
+	padding: 80px 0px;
+	text-align: center;
+}
+
+#features p{
+	font-weight: bolder;
+    font-size: 18px;
+    margin-top: -20px;
+    margin-bottom: 0px;
+}
+/* End Features section */
+
+
+/* Docters Section */
+
+#docters{
+	padding: 80px 0px;
+	text-align: center;
+	background-color: #e6f5fa;
+}
+
+.docters-title {
+    padding-bottom: 40px;
+}
+
+.docters-lists {
+    padding: 0px 20px;
+}
+
+.docters-list {
+    background-color: #fff;
+    padding: 10px 10px 0px 10px;
+}
+
+.docters-list img{
+	width: 100%;
+}
+
+.doctors-info {
+    padding: 25px 20px;
+}   
+
+.doctors-info h6 {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 17px; 
+}    
+
+.doctors-info p{
+    color: #e7e7e7;
+    margin-bottom: 0px;
+    letter-spacing: 0px;
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+
+/* End Docters Section */
+
+
+/* Clients Testimonial */
+#clients-testimonial {
+	padding: 80px 0px;
+}
+
+#clients-testimonial .text-center{
+	padding-bottom: 40px;
+}
+
+.testimonial-description {
+    padding: 0px 70px 0px 120px;
+}
+
+.testimonial-description p:first-child{
+	padding-top: 21px;
+}
+
+.owl-carousel .owl-item img{
+	width: auto;
+}
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev {
+    background-color: #2379c2;
+    color: #fff;
+    font-size: 28px;
+    height: 28px !important;
+    padding: 0px 10px 0px 10px;
+}
+.owl-theme .owl-nav {
+    text-align: right;
+    position: relative;
+    margin-top: -30px !important;
+}
+.owl-carousel .owl-nav span {
+    padding: 0px 10px;
+    position: relative;
+    top: -8px;
+}
+
+.testimonial-name {
+    float: right;
+    text-align: right;
+    padding-top: 35px;
+}
+
+.testimonial-description p:first-child {
+    padding-top: 21px;
+    font-family: 'poppins,sans-serif' !important;
+    font-size: 22px;
+}
+
+.testimonial-name h6{
+    color: #222222;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.testimonial-name p{
+    color: #e7e7e7;
+    margin-bottom: 0px;
+    letter-spacing: 0px;
+    font-size: 15px;
+    font-weight: lighter;
+}    
+
+blockquote::before {
+    content: "\f10d";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    color: #2379c2;
+    font-size: 40px;
+    margin-left: -55px;
+    position: absolute;
+}    
+
+.loop button:focus {
+	outline:none;
+}
+
+.owl-theme .owl-dots .owl-dot span{
+	height: 16px;
+    width: 16px;
+    border-radius: 100%;
+    background-color: transparent;
+    border: 3px solid #464648;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+.owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: #2379c2 !important;
+    border: none;
+}
+/* End Clients Testimonial */
+
+
+/* Schedule Section*/
+#schedule{
+	background-color: #e6f5fa;
+	padding: 80px 0px;
+}
+
+.schedule-date h2{
+    padding-bottom: 70px;
+}
+
+.schedule-day ul{
+    list-style-type: none;
+    font-weight: bold;
+    font-size: 24px;
+    padding-left: 0px;
+}
+
+.schedule-day li {
+    padding-bottom: 15px;
+}
+
+.schedule-time {	
+    margin-left: -30px;
+}
+
+
+.book-appoinment form {
+    padding-left: 70px;
+}
+.schedule-time ul{
+    list-style-type: none;
+    font-size: 25px;
+    padding-left: 0px;
+}
+
+.schedule-time li {
+    padding-bottom: 15px;
+}
+
+.book-appoinment h2 {
+	padding-bottom: 70px;
+	text-align: center;
+}
+
+.book-appoinment .form-control-lg{
+	/*color: #b7bbbe;*/
+	border: 1px solid #2b2d30;
+	font-family: "poppins";
+	background-color: transparent;
+	margin-bottom: 10px;
+	width: 100%;
+	height: 55px;
+}
+
+.book-appoinment ::-webkit-input-placeholder {
+  color: #b7bbbe;
+} 
+
+.fa-calendar:before {
+    font-size: 23px;
+}
+
+i.fa.fa-calendar{
+	position: absolute;
+	top: 15px;
+    right: 30px;
+}
+
+select.form-control-lg:not([size]):not([multiple]) {
+    height: 55px;
+}
+.book-appoinment .btn.btn-infos{
+	width: 100%;
+}
+/* End Schedule Section*/
+
+
+/* Latest News section */
+#latest-news{
+	padding: 80px 0px;
+}
+
+.latest-news-caption{
+	padding-left: 0px;
+    padding-top: 42px;
+}
+
+.latest-news-description{
+	background-color: #f4f4f4;
+	padding: 20px 63px 0px 32px;
+}
+
+.latest-news-description p{
+    color: #373737;
+}
+
+#latest-news .owl-carousel .owl-item img {	
+	width: 100%;
+    height: 199px;
+}
+
+.latest-news-imgs{
+	padding-right: 0px;
+}
+
+.owl-theme .owl-nav {
+	text-align: right;
+	position: relative;
+    margin-top: -40px;
+
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    border-radius: 0px;
+    margin: 2px;
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev{
+    background-color: #2379c2;
+    color: #fff;
+    font-size: 28px;
+    height: 38px;
+    padding: 0px 10px 0px 10px;
+}
+
+.owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev{
+
+}
+
+.owl-carousel .owl-nav button:focus {
+	outline: none;
+}
+
+.owl-carousel .owl-nav span{
+	padding: 0px 10px;
+}
+/* End Latest News section */
+
+
+/* Call to action section */
+#call-to-action{
+	background-color: #2379c2;
+	padding: 55px 0px;
+}
+
+#call-to-action h4{
+	color: #fefefd;
+    font-size: 36px;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+/* End Call to action section */
+
+
+/*FOOTER SECTION*/
+#footer{
+    padding: 70px 0px 40px 0px;
+    background-color: #161616;
+}
+.footer-columns.footer-services{
+    max-width: 100% !important;
+}
+
+.contact-details .location{
+    padding-bottom: 0px;
+}
+ .contact-details .location i{
+  font-size: 22px;
+  color:#fff;
+  float: left;
+}
+
+.contact-details h4{
+  padding-left: 35px;
+  padding-top: 0px;
+  color: #fff;
+  font-size: 15px;
+ font-weight: bolder;
+ margin-bottom: 0px;
+}
+
+.location p {
+    padding-left: 35px !important;
+    padding-top: 0px !important;
+    font-size: 13px !important;
+    font-weight: bolder;
+    font-family: poppins;
+    padding-bottom: 0px !important;
+}
+
+
+#footer p{
+    color:#fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+#footer li>a{
+    color:#939393;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.footer-columns li {
+    border-bottom: 2px solid #282828;
+    padding: 4px 0px;
+}
+
+.footer-columns li:last-child {
+    border-bottom: none;
+}
+
+.footer-columns img{
+ margin-top: -8px;
+ margin-bottom: 35px;
+ max-width: 100%;
+}
+
+.footer-columns h6{
+    font-weight: bolder;
+    padding-bottom: 10px;
+    color:#fff !important;
+    font-size: 16px;
+}
+
+.footer-columns ul{
+    padding: 0px !important;
+    list-style: none;
+}
+
+.footer-columns li a:hover{
+    color:#3e7de4;
+    cursor: pointer;
+}
+
+.footer-columns .social .fa {
+    color: #fff;
+    border: none;  
+    padding: 5px 9px 9px 6px;
+    width: 20px;
+    border-radius: 2px;
+    height: 20px;
+    margin-right: 8px;
+
+}
+i.fa.fa-facebook{
+	background-color: #4e6899;
+}
+
+i.fa.fa-twitter{
+	background-color: #99dbf3;
+}
+
+i.fa.fa-linkedin{
+	background-color: #3694b5;
+}
+
+.footer-columns .social i:hover{
+  background-color: #3e7de4;
+  color: #fff;
+  cursor: pointer;
+}
+
+#footer .social li>a {
+    color: #fff;
+    font-weight: bolder;
+}
+
+
+
+.copyright{
+    background-color: #000000;
+    padding: 45px 0px 28px 0px;
+}
+
+.copyright p{
+    color: #fff;
+    font-size: 13px;
+}
+
+.copyright a{
+    color: #2379c2;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: bolder;
+}
+.mr-auto{
+text-align: right;
+}
+
+.copyright a:hover{
+    text-decoration: none;
+    color:darkgray;
+}
+
+.location a{
+    color:#fff;
+}
+.location a:hover{
+    color:#2379c2;
+    text-decoration: none;
+}
+/* END FOOTER SECTION*/
+
+
+/* ----------------About page css -------------------*/
+
+.top-banner{
+    background-image: url(../images/banner_2.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    margin-top: 113px;
+}
+
+.top-banner-caption {
+    margin-left: 98px;
+     padding: 170px 0px;
+}
+
+.top-banner-caption h2{
+    font-weight: bolder;
+    padding-bottom: 10px;
+    color: #000;
+    font-size: 44px;
+    letter-spacing: 2px;
+}    
+
+.top-banner-caption p{
+    color: #DED9D4;
+}
+
+
+
+/* Company Detail Section*/
+section#company-detail {
+    padding: 100px 0px;
+}
+
+#company-detail img{
+    width: 100%;
+}
+
+.company-detail-description h2 {
+    letter-spacing: 1px;
+    color: #181818;
+    padding-bottom: 2px;
+}   
+
+.company-detail-description {
+    padding-left: 65px;
+    font-family: poppins;
+    font-size: 18px;
+
+} 
+/* End Company Detail Section*/
+
+
+/* Our History */
+#our-history {
+	padding: 80px 0px;
+	background-color: #e6f5fa;
+}
+#our-history h2{
+	padding-bottom: 57px;
+}
+
+.year {
+
+    border-radius: 50%;
+    background-color: #fff;   
+    height: 145px;
+    width: 145px;
+}
+
+.year h4{
+	font-weight: bolder;
+    font-size: 31px;
+    padding-top: 55px;
+}
+
+#our-history p{
+	padding-top: 60px;
+    padding: 60px 16px 0px 10px;
+    font-weight: bolder;
+}
+
+#features h2{
+	padding-bottom:35px;
+}
+
+.feature-title p{
+	font-weight: 100 !important;
+}
+
+.docters-bg{
+	background-color: #fff !important;
+}
+
+.docters-bg .docters-list {
+	background-color: #e6f5fa !important;
+}
+
+.docters-bg .doctors-info p{
+	    color: #969b9e;
+}
+
+.clients-bg{
+	background-color: #e6f5fa;
+}
+
+.clients-bg .owl-carousel .owl-item img{
+	border-radius: 50%;
+}
+
+.clients-bg .testimonial-name p{
+	color: #969b9e;
+}
+/* End Our History */
+
+/*----------- End About page css ----------------*/
+
+
+
+
+
+
+/*--------------- Departments page---------------*/
+.departments-bg {
+    background-color: #fff !important;
+}
+
+.departments-bg .department-caption{
+	    background-color: #e6f5fa !important;
+}
+
+.departments-bg .department-list{
+	padding-bottom: 60px;
+}
+
+
+.departments-bg .department-list:last-child{
+	padding-bottom: 0px;
+}
+
+/*--------------- End  Departments page---------------*/
+
+/* Doctors PAGE CSS */
+
+#doctor-page{
+    padding: 70px 0px;
+}
+
+
+#doctor-page .content{
+    padding-top: 20px;
+}
+#doctor-page .btn.btn-infos {
+    
+    float: right;
+    margin-right: 28px;
+    font-size: 15px;
+    padding: 10px 24px;
+}
+
+.doctors-content {
+    padding-left: 0px;
+    padding-top: 20px;
+}
+
+.content h5{
+	font-weight: bolder;
+}
+
+.content h6{
+	font-size: 14px;
+}
+
+#doctor-page .doctor-image img{
+    width: 100%;
+    border-top-right-radius: 2px;
+    padding: 10px;
+}
+
+#doctor-page .items {
+    padding-bottom: 50px;
+}
+
+#doctor-page .doctor-description a>h6{
+    font-size: 25px;
+    font-weight: bolder;
+    color: #282828 !important;
+}
+
+.doctor-listing:hover #doctor-page .doctor-description a>h6{
+    color: #3e7de4;
+}
+
+.doctor-listing{
+	background-color: #e6f5fa;
+}
+
+#doctor-page .doctor-description a>h6:hover {
+    color:#3e7de4 !important;
+}
+
+#doctor-page .doctor-description h6:last-child{
+    color: #d3d3d3;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#doctor-page p{    
+	color: #231e23;
+    padding-right: 65px;
+    padding-top: 20px;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.appoinment-time {
+    display: inline-flex;
+}
+
+.appoinment-time i.fa {
+    color: #2379c2;
+    padding: 24px 10px 20px 0px;
+}
+
+.appoinment-time p {
+    font-size: 16px !important;
+    font-weight: 600;
+    color: #000 !important;
+}
+	
+	#doctor-page .items {
+    padding-bottom: 32px;
+}
+/* End Docters page*/
+
+
+/* News Page */
+
+#news-page{
+    padding: 70px 0px;
+}
+
+
+#news-page .content{
+    padding-top: 5px;
+}
+
+#news-page .content h3{
+	font-size: 24px;
+    color: #2379c2;
+    font-weight: bolder;
+    letter-spacing: 0.5px;
+    margin-bottom: 0px;
+}
+
+#news-page .views-element-container .btn.btn-infos {
+    float: right !important;
+    margin-right: 28px;
+    font-size: 15px;
+    padding: 3px 28px !important;
+    position: relative;
+    top: -57px;
+    right: 220px;
+}
+
+.news-details-btn.text-center {
+    margin-right: 120px !important;
+}
+
+.news-content {
+    padding-left: 0px;
+    padding-top: 20px;
+}
+
+.content h5{
+	font-weight: bolder;
+}
+
+.content h6{
+    font-size: 16px;
+    padding-right: 20px;
+    font-weight: bolder;
+    line-height: 30px;
+}
+
+#news-page .news-images img{
+    width: 100%;
+    border-top-right-radius: 2px;
+    padding: 30px 30px 33px 30px;
+}
+
+#news-page .items {
+    padding-bottom: 50px;
+}
+
+
+.news-listing{
+	background-color: #e6f5fa;
+}
+
+
+
+#news-page p{    
+	color: #231e23;
+    padding-right: 65px;
+    padding-top: 4px;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.news-time {
+    display: inline-flex;
+}
+
+.news-time i.fa {
+    color: #2379c2;
+    padding: 18px 10px 20px 0px;
+}
+
+.news-time p {
+    font-size: 16px !important;
+    font-weight: 100;
+    color: #8e989a !important;
+    padding-right: 23px !important;
+    padding-top: 14px !important;
+}
+	
+	#news-page .items {
+    padding-bottom: 32px;
+}
+
+/* End News Page */
+
+/* News details page */
+
+.news-detail-page{
+	 padding: 70px 0px 280px 0px !important;
+}
+
+.news-detail-description  h6{
+    padding-left: 75px;
+    padding-right: 58px;
+    text-align: left !important;
+}
+
+.news-detail-description  p{
+    padding-left: 75px;
+    padding-right: 58px;
+    text-align: left !important;
+    font-size: 15px !important;
+    color: #000 !important;
+}
+.news-detail-description  p:last-child{
+	padding-bottom: 70px;
+}
+
+.news-details-btn .btn.btn-infos{
+	float: none !important;
+	padding: 8px 28px !important;
+}
+/*  End News details page */
+
+
+/* Contact Page */
+#contact-page{
+	padding: 120px 0px 8px 0px
+}
+.contact-bg{
+	background-color: #eaf7fd;	
+}
+
+#contact-page iframe {
+    width: 100%;
+    padding: 30px 20px 25px 20px;
+    height: 600px;
+}
+
+/* Contact section*/
+#contact{
+}
+
+form {
+    padding-top: 25px;
+}
+
+#contact .contact-bg h4{
+	color:#2379c2;
+	font-size: 24px;
+    font-weight: bolder;
+    letter-spacing: 0.5px;
+
+}
+
+.enquiry-form {
+    padding: 35px;
+}
+
+#contact .form-control {
+    background-color: transparent;
+    border: 1px solid #40484c;
+}   
+
+#contact {
+    padding-bottom: 8px;
+}
+
+#contact input{
+    height: 55px;
+}
+
+#contact ::-webkit-input-placeholder {
+  color: #c5c7c9;
+  font-size: 22px;
+  font-family: "poppins";
+} 
+
+
+#contact input:focus {
+    border: 1px solid #2379c2;
+    outline: 0;
+    box-shadow:0 1px 1px rgba(0, 0, 0, 0.075);
+    color: #fff;
+    font-size: 15px;	
+}
+
+#contact textarea:focus {
+    color: #fff;
+    font-size: 15px;	
+    border: 1px solid #2379c2;
+    outline: 0;
+    box-shadow:0 1px 1px rgba(0, 0, 0, 0.075);	
+}
+
+#contact .btn .btn-infos{
+	padding: 6px 16px;
+	font-size: 16px;
+}
+
+.contact-inner{
+	background-color: #eaf7fd;
+	min-height: 300px;
+}
+
+.contact-address:first-child{
+	padding-left:0px;
+	padding-right: 0px;
+}
+
+
+.contact-address:last-child{
+	padding-left:0px;
+	padding-right: 0px;
+}
+
+input.form-control.form-control-lg {
+    color: #000 !important;
+}
+
+input.form-control.form-control-lg {
+    color: #000 !important;
+}
+
+textarea.form-control.form-control-lg {
+    color: #000 !important;
+}
+.form-control-lg, .input-group-lg>.form-control, .input-group-lg>.input-group-addon, .input-group-lg>.input-group-btn>.btn{
+	font-size: 15px !important;
+}
+
+#contact-info{
+	padding-bottom: 120px;
+}
+
+.contact-inner h4{
+	color: #2379c2;
+    padding:30px 30px 15px 30px;
+    font-weight: bolder;
+}
+
+.contact-inner h6 {
+    padding-left: 30px;
+    padding-right: 80px;
+    font-weight: bolder;
+    }
+.contact-inner p {
+    padding-left: 30px;
+    padding-right: 80px;
+    font-weight: bolder;
+    }
+
+.contact-inner a{
+    	text-decoration: none;
+    	color: #000 !important;
+    	padding-left: 30px;
+    	font-weight: bolder;
+    }
+
+.contact-inner a:hover{
+	color: #2379c2 !important;
+}    
+
+/* End  Contact section*/
+
+/* End Contact Page */
+
+
+/* Responsive Queries */
+@media screen and (min-width:1200px) {
+	#departments .department-list {
+	flex: 0 0 20%;
+    max-width: 20%;
+}
+}
+
+@media screen and (min-width:992px) and (max-width:1199px) {
+
+.carousel-caption.d-none.d-md-block{
+	    width: 70%;
+	    left: 5% !important;
+	}
+
+
+
+#departments .department-list {
+	flex: 0 0 20%;
+    min-width: 20% !important;
+}
+
+.department-caption p {
+    padding: 20px 0px;
+}
+
+.schedule-time{
+	padding: 0px;
+}
+
+#doctor-page .btn.btn-infos{
+	margin-bottom: 30px;
+}	
+}
+@media screen and (min-width: 992px) and (max-width: 1199px){
+.doctor-image {
+    padding-top: 17PX;
+}
+
+}
+@media screen and (min-width: 992px) and (max-width: 1100px){
+    .navbar-light .navbar-nav .nav-item a{
+        padding: 0px 8px;
+    }
+}
+
+@media screen and (min-width:768px) and (max-width:1199px) {
+	.news-image{
+		min-width: 100% !important;
+	}
+   .news-content {
+   		min-width: 100% !important;
+   }
+
+   .news-content {
+    padding-left: 45px;
+	}
+
+	#news-page .btn.btn-infos{
+	    margin-bottom: 30px;
+	}
+
+}	
+
+
+@media screen and (min-width:769px) and (max-width:991px) {
+
+.carousel-caption.d-none.d-md-block{
+	    width: 80%;
+	    left: 6% !important;
+	}
+#about img{
+	width: 100%;
+}	
+
+#about .about-content p {
+    font-size: 14px;
+
+}
+
+#about .btn.btn-infos{
+	margin-bottom: 30px;
+}
+
+.department-list {
+    min-width: 100% !important;
+    margin-bottom: 40px;
+    padding: 0px 130px;
+}
+
+.testimonial-description {
+    padding: 0px 70px 0px 155px;
+}
+
+.schedule-date {
+	min-width: 100% !important;
+}
+
+.schedule-day {
+    padding-left: 100px;
+}
+
+.schedule-time {
+    margin-left: 0px;
+}
+.footer-columns li{
+	width: 100%;
+}
+
+.book-appoinment {
+    min-width: 100%;
+}
+
+.book-appoinment h2{
+	padding-bottom: 50px;
+}
+
+#our-history  .history-outer {
+    max-width: 33.33%;
+    flex: 0 0 33.33%;
+}
+
+.company-detail-description {
+    padding-left: 15px !important;
+    padding-top: 30px !important;
+    min-width: 100% !important;
+}
+
+.company-detail-img{
+    min-width: 100% !important;
+}
+
+#doctor-page .btn.btn-infos{
+	margin-bottom: 30px;
+}
+.navbar-light .navbar-nav .nav-item .btn.btn-infos{
+    padding: 3px 10px !important;
+}
+.doctors-content {
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+.doctors-content {
+    padding-left: 27px;
+}
+.doctor-image {
+    max-width: 100%;
+    flex: 0 0 100%;
+}
+
+.latest-news-description {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+.latest-news-imgs {
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+}
+
+@media screen and (min-width:320px) and (max-width:575px) {
+	.department-list {
+    margin-bottom: 40px;
+}
+
+.schedule-date {
+    margin: auto;
+}
+
+.col-md-6.schedule-day {
+    width: 30% !important;
+    margin: auto;
+    margin-top: 0px;
+}	
+
+.schedule-day ul{
+    font-size: 16px;
+    padding-left: 0px;
+}
+
+.schedule-time {
+    padding-left: 24px;;
+    width: 70% !important;
+}
+
+.schedule-time ul{
+	font-size: 16px;
+    padding-left: 24px;;	
+}
+
+.year{
+	margin:auto;
+}
+
+#our-history p{
+	padding: 60px 16px 0px 27px;
+    padding-bottom: 42px;
+    margin-top: -32px;
+}
+}
+
+@media only screen and (max-width: 768px) {
+
+
+   #mainNav a img {
+   	margin-left: -5px;
+   }  
+
+   .navbar-light .navbar-toggler{
+   		margin-right: 20px;
+   }
+
+   .d-none {
+    display: block !important;
+    }
+
+ 
+	#banner-slider .carousel-item {
+		height: 400px;
+        width: 100%
+	}
+ 	
+ 	#banner-slider .carousel-caption {
+    left: 6%;
+	}
+
+	.carousel-caption.d-none.d-md-block{
+    	padding-bottom: 79px;
+    	width: 90%;
+	}
+
+	.carousel-caption.d-none p{
+		font-size: 20px;
+	}
+
+	.carousel-caption.d-none h1{
+		font-size: 22px;
+	}
+	#banner-slider .carousel-caption.d-none .btn.btn-infos{
+		   padding: 7px 19px;
+          margin-bottom: 13px;
+          font-size: 16px;
+	}
+
+	#about img{
+		width: 100%;
+	}
+
+	#about .btn.btn-infos{
+		margin-bottom: 30px;
+	}
+
+	.departmets-header p{
+		font-size: 14px;
+	}
+
+	.department-list {
+    min-width: 100% !important;
+    padding: 0px 40px;
+    margin-bottom: 40px;
+}
+
+.docters-lists{
+	margin-bottom: 30px;
+}
+.testimonial-description {
+    padding: 0px 28px 0px 80px;
+}
+
+.owl-carousel .owl-item img{
+	margin: auto;
+}
+
+.schedule-day {
+    width: 50% !important;
+}
+	
+.schedule-time {
+    width: 50% !important;
+}
+
+.book-appoinment form {
+    padding: 15px;
+}
+
+.book-appoinment h2 {
+   padding-bottom: 35px;
+
+}
+
+.latest-news-caption {
+padding-bottom: 30px;
+}
+
+#call-to-action h4{
+	font-size: 20px;
+}
+
+.footer-columns h6 {
+	padding-top: 28px;
+}
+
+.company-detail-description {
+    padding-left: 15px !important; 
+    padding-top: 35px !important;
+}
+
+.content{
+	padding-left: 50px;
+}
+
+#doctor-page p{
+	padding-right: 16px;
+}
+
+.appoinment-time p{
+	font-size: 10px !important;
+}
+
+
+#doctor-page .btn.btn-infos{
+	margin-bottom: 20px;
+	float: none; 
+    margin-right: 0px;
+}
+
+#news-page .content {
+    padding-left: 60px;
+}
+
+.news-time p{
+    font-size: 12px !important;
+    padding-right: 40px !important;
+}
+
+#news-page .btn.btn-infos{
+     margin-bottom: 25px;
+}
+
+.news-detail-description p , .news-detail-description h6{
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.contact-address:first-child{
+	padding-left:15px;
+	padding-right: 15px;
+}
+
+
+.contact-address:last-child{
+	padding-left:15px;
+	padding-right: 15px;
+	padding-top: 15px;
+}
+.navbar-light .navbar-nav .nav-item .btn.btn-infos {
+    padding: 3px 10px !important;
+}
+
+.form-control-lg.form-text.hasDatepicker {
+   width: 104% !important;
+}
+
+}
+
+@media only screen and (max-width: 480px) {
+   #mainNav a {
+    	padding: 0px 0px 0px 20px;
+    	width: 70%;
+   }
+   #mainNav a img {
+   	    width: 100%;
+   }   
+
+   .navbar-light .navbar-toggler {
+   		margin-right: 20px;
+   }
+
+   .schedule-day {
+    width: 30% !important;
+}
+	
+.schedule-time {
+    width: 70% !important;
+}
+
+.top-banner-caption{
+	text-align: center;
+	margin-left: 0px; 
+}
+
+}   
+
+/* End Responsive Quries */
+
+/* Page not found */
+#not-found-section {
+    padding: 217px 0px 100px;
+}
+
+.not-found-body {
+    max-width: 70%;
+    margin: auto;
+}
+
+.not-found-body h2 {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.not-title {
+    border: 2px solid #2379c2;
+    padding: 10px 50px 30px 50px;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 40px;
+    border-radius: 10px;
+}
+
+.not-title h1 {
+    font-size: 125px;
+    margin: 0px;
+    color: #2379c2;
+}
+
+.not-title h2 {
+    font-size: 25px;
+    margin: 0px;
+    color: #2379c2;
+}
+
+#not-found-section a.btn.btn-custom{
+    text-align: center;
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 10px 0 0 0;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.42857143;
+    background-color: #2379c2;
+    border-color: #2379c2 !important;
+    color: #fff !important;
+    transition: 0.7s;
+}
+#not-found-section a.btn.btn-custom:hover{
+    background-color: #fff;
+    border-color: #b7b7b7 !important;
+    color: #333 !important;
+    transition: 0.7s;
+}
+
+@media (min-width: 320px) and (max-width: 480px){
+.not-title h1 {
+    font-size: 92px !important;
+    margin: 0px !important;
+    color: #2379c2 !important;
+}
+.not-title h2 {
+    font-size: 22px !important;
+    margin: 0px !important;
+    color: #2379c2 !important;
+}
+.not-title {
+    border: 2px solid #2379c2 !important;
+    padding: 10px 50px 30px 50px !important;
+    width: 100% !important;
+    margin: auto !important;
+    margin-bottom: 40px !important;
+    border-radius: 10px !important;
+}
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+.not-title h1 {
+    font-size: 92px !important;
+    margin: 0px !important;
+    color: #2379c2 !important;
+}
+.not-title h2 {
+    font-size: 22px !important;
+    margin: 0px !important;
+    color: #2379c2 !important;
+}
+.not-title {
+    border: 2px solid #2379c2 !important;
+    padding: 10px 50px 30px 50px !important;
+    width: 100% !important;
+    margin: auto !important;
+    margin-bottom: 40px !important;
+    border-radius: 10px !important;
+}
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+.not-title h1 {
+    font-size: 92px !important;
+    margin: 0px !important;
+    color: #2379c2 !important;
+}
+.not-title h2 {
+    font-size: 22px !important;
+    margin: 0px !important;
+    color: #2379c2 !important;
+}
+.not-title {
+    border: 2px solid #2379c2 !important;
+    padding: 10px 50px 30px 50px !important;
+    width: 70% !important;
+    margin: auto !important;
+    margin-bottom: 40px !important;
+    border-radius: 10px !important;
+}
+}
+/* User login form css*/
+#user-login {
+  max-width: 40%;
+  margin: auto;
+  padding: 20px 0px 40px;
+  border: 2px solid #f5f5f5;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+.login-text .form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+.login-text a {
+  color: #2379c2;
+}
+.login-button input {
+  padding: 5px 20px 5px 20px;
+  background: #2379c2;
+  border: 1px solid #2379c2;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.login-button input:hover {
+  padding: 5px 20px 5px 20px;
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+.login-button , #user-register-form .form-actions ,#user-pass .form-actions{
+  text-align: center;
+}
+
+#user-register-form , #user-pass{
+  max-width: 50%;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 2px solid #f5f5f5;
+  padding: 20px 20px 40px;
+  overflow: hidden;
+}
+
+#user-register-form .js-form-item {
+  margin-bottom: 20px !important;
+}
+
+#user-register-form .js-form-item input, #user-pass .js-form-item input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#user-register-form .form-actions input , #user-pass .form-actions input {
+  padding: 5px 20px 5px 20px;
+  background: #4a9a4f;
+  border: 1px solid #fff;
+  color: #fff;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+#user-register-form .form-actions input:hover , #user-pass .form-actions input:hover {
+  padding: 5px 20px 5px 20px;
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 20px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 610px) {
+
+#user-login {
+  max-width: 95% !important;
+  margin: auto;
+  padding: 20px 0px 40px;
+  border: 2px solid #f5f5f5;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+#user-register-form , #user-pass{
+  max-width: 95% !important;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 2px solid #f5f5f5;
+  padding: 20px 20px 40px;
+  overflow: hidden;
+}
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+
+#user-login {
+  max-width: 95% !important;
+  margin: auto;
+  padding: 20px 0px 40px;
+  border: 2px solid #f5f5f5;
+  margin-bottom: 40px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+#user-register-form , #user-pass{
+  max-width: 95% !important;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  border: 2px solid #f5f5f5;
+  padding: 20px 20px 40px;
+  overflow: hidden;
+}
+
+}
+/* End  User login form css*/
+/* End Page not found */
+#block-footerfirst img{
+    margin-bottom: 50px;
+}
+#contact .col-md-6{
+       width:100%;
+       max-width: 100%; 
+}
+#contact form .btn{
+    width:max-content;
+    color:#000;
+}
+
+.status-message{
+    margin-left: 25px;
+
+}

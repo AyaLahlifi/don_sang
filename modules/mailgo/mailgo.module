@@ -1,0 +1,39 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ * @param $route_name
+ * @param RouteMatchInterface $route_match
+ * @return string
+ */
+function mailgo_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.mailgo':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('MailGo Library implementation for Drupal') . '</p>';
+      return $output;
+    default:
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ *
+ * @param array $attachments
+ */
+function mailgo_page_attachments(array &$attachments) {
+  /** @var \Drupal\mailgo\MailGoManager $service */
+  $service = \Drupal::service('mailgo');
+  $attachments['#attached']['html_head'][] = [
+    [
+      '#type' => 'html_tag',
+      '#tag' => 'script',
+      '#value' => $service->generateConfigJs(),
+      '#weight' => 0,
+    ],
+    "mailgo_library_config",
+  ];
+}

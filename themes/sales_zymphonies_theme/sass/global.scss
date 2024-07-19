@@ -1,0 +1,22 @@
+/** 
+	* Filename:     custom-style.css
+	* Version:      1.0.0 (2016-03-05)
+					1.0.2 (2024-01-09)
+	* Website:      https://www.zymphonies.com
+	* Description:  Global Styles
+	* Author:		support Team
+					support@support.com
+**/
+
+@import "compass/reset";
+@import "compass/CSS3";
+@import "variables-and-mixins";
+@import "base";
+@import "typhography";
+@import "global-styles";
+@import "home.scss";
+@import "header";
+@import "slider";
+@import "menu";
+@import "demo";
+@import "pages";

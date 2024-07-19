@@ -1,0 +1,48 @@
+_core:
+  default_config_hash: Qg7h0hjOnsQaKnF6DToLvb_lcHQAHLCZ9N58H5ajBVc
+features:
+  node_user_picture: 1
+  comment_user_picture: 1
+  comment_user_verification: 1
+  favicon: 1
+logo:
+  use_default: 1
+favicon:
+  use_default: 1
+footer_details: 1
+footer_copyright: '© 2022 All rights reserved. '
+arrow_up: left
+slideshow_display: 1
+slide1_head: 'Lorem Ipsum'
+slide1_desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+slide1_url: '#'
+slide1_link_text: 'Learn more'
+slide2_head: 'Lorem Ipsum'
+slide2_desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+slide2_url: '#'
+slide2_link_text: 'Learn more'
+slide3_head: 'Lorem Ipsum'
+slide3_desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry''s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
+slide3_url: '#'
+slide3_link_text: 'Learn more'
+show_social_icon: 1
+facebook_url: 'https://www.facebook.com/'
+twitter_url: 'https://twitter.com/'
+instagram_url: 'https://www.instagram.com/'
+linkedin_url: 'https://www.linkedin.com/'
+youtube_url: 'https://www.youtube.com/'
+vimeo_url: ''
+telegram_url: 'https://telegram.com/'
+whatsapp_url: 'https://www.whatsapp.com/'
+github_url: 'https://github.com/'
+show_contact_details: 1
+footer_contact: 'contact details'
+location: 'smashing infolabs atulya it park '
+phone: ' 1800-345-6789'
+emails: dark_awesome@gmail.com
+show_footer_first_details: 1
+footer_image: {  }
+footer_text: 'At dark awesome the focus is always to serve our clients in the best way. We are an expert team of web developers, and designers that wants to build amazing websites and mobile apps'
+show_header_image_details: 1
+header_image: {  }
+body_details: 1

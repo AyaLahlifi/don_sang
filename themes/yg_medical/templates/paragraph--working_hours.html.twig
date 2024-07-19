@@ -1,0 +1,40 @@
+
+
+<!-- Schedule Section -->
+    <section id="schedule">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6 schedule-date">
+            <h2 class="text-center">{{ content.field_title.0 }}</h2>
+            <div class="row">
+              <div class="col-md-6 schedule-day">
+                <ul>
+                  <li>Monday</li>
+                  <li>Tuesday</li>
+                  <li>Wednesday</li>
+                  <li>Thursday</li>
+                  <li>Friday</li>
+                  <li>Saturday</li>
+                  <li>Sunday</li>
+                </ul>
+              </div>
+              <div class="col-md-6 schedule-time">
+              <ul>
+                {{ content.field_work }}
+              </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 book-appoinment">
+          <h2>Book An Appoinment</h2>
+            {{ content.field_appointment.0 }}
+          </div>
+
+        </div>
+      </div>
+    </section>
+<!-- End Schedule Section -->
+
+{{ content.field_latest_news }}

@@ -1,0 +1,7 @@
+tr .button,
+tr .form-item {
+  margin: unset;
+}
+tr .field:not(:last-child) {
+  margin-block-end: var(--sp0-25);
+}

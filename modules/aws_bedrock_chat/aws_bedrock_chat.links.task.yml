@@ -1,0 +1,17 @@
+aws_bedrock_chat.settings_tab:
+  route_name: aws_bedrock_chat.settings
+  base_route: aws_bedrock_chat.settings
+  title: 'Configuration'
+  weight: 0
+
+aws_bedrock_chat.customize_settings_tab:
+  route_name: aws_bedrock_chat.customize_settings
+  base_route: aws_bedrock_chat.settings
+  title: 'Customize'
+  weight: 1
+
+aws_bedrock_chat.translations_tab:
+  route_name: aws_bedrock_chat.translation_settings
+  base_route: aws_bedrock_chat.settings
+  title: 'Translate'
+  weight: 2

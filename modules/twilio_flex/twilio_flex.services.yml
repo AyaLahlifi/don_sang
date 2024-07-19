@@ -1,0 +1,5 @@
+services:
+  logger.channel.twilio_flex:
+    class: Drupal\Core\Logger\LoggerChannel
+    factory: logger.factory:get
+    arguments: ['twilio_flex']

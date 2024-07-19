@@ -1,0 +1,20 @@
+security_login_secure.settings:
+  type: mapping
+  label: Settings
+  mapping:
+    website_security_enable_bruteforce:
+      type: integer
+    website_security_track_time:
+      type: integer
+    website_security_allowed_attempts_user:
+      type: integer
+    website_security_allowed_attempts_host:
+      type: integer
+    website_security_allowed_attempts_ip:
+      type: integer
+    website_security_attack_detection:
+      type: integer
+    website_security_block_time_period:
+      type: integer
+    website_security_show_remaining_attempts:
+      type: integer

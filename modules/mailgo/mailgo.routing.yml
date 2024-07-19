@@ -1,0 +1,9 @@
+mailgo.global_config_form:
+  path: '/admin/config/mailgo'
+  defaults:
+    _form: '\Drupal\mailgo\Form\GlobalConfigForm'
+    _title: 'MailGo Configuration'
+  requirements:
+    _permission: 'access administration pages+administer mailgo'
+  options:
+    _admin_route: TRUE

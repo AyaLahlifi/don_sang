@@ -1,0 +1,27 @@
+uuid: 3ef3a9dd-e210-4bab-8da6-270e07a9e866
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:footer_second:d6b39b45-656f-4008-a1db-fe3f382e98c6'
+  module:
+    - block_content
+  theme:
+    - dark_awesome
+_core:
+  default_config_hash: NTX7XaKJPFXyHGhZP6b2RBSzm4jMHytqotFw1By_9SM
+id: footersecond
+theme: dark_awesome
+region: footer_second
+weight: 0
+provider: null
+plugin: 'block_content:d6b39b45-656f-4008-a1db-fe3f382e98c6'
+settings:
+  id: 'block_content:d6b39b45-656f-4008-a1db-fe3f382e98c6'
+  label: 'Footer second'
+  label_display: '0'
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility: {  }

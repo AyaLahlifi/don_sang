@@ -1,0 +1,22 @@
+uuid: 8b6d4df5-fdf4-42ca-bab5-f1e1ae43a765
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - dark_awesome
+_core:
+  default_config_hash: tAamHFCoixOsDSItXowTJ6e0dIXCdigGQFtHTZRuvRw
+id: dark_awesome_content
+theme: dark_awesome
+region: content
+weight: -2
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

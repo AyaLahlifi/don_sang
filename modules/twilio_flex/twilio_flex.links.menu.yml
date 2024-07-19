@@ -1,0 +1,5 @@
+twilio_flex.settings:
+  route_name: twilio_flex.settings
+  title: 'Twilio Flex'
+  description: 'Twilio Flex Webchat Settings.'
+  parent: system.admin_config_services

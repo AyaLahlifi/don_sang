@@ -1,0 +1,13 @@
+twilio-flex:
+  version: 1.x
+  js:
+    js/twilio_flex.js: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - twilio_flex/twilio-flex.lib
+
+twilio-flex.lib:
+  version: 2.9.1
+  js:
+    js/twilio-flex-webchat.min.js: {}

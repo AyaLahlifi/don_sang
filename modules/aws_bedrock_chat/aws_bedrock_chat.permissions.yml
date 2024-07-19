@@ -1,0 +1,11 @@
+administer aws bedrock chat:
+  title: 'Configure AWS Bedrock Chat'
+  description: 'Allows users to configure AWS Bedrock Chat settings.'
+
+translate aws bedrock chat:
+  title: 'Translate AWS Bedrock Chat'
+  description: 'Allows users to translate AWS Bedrock Chat interface and messages.'
+
+customize aws bedrock chat:
+  title: 'Customize AWS Bedrock Chat'
+  description: 'Allows users to customize the appearance of the AWS Bedrock Chat interface.'

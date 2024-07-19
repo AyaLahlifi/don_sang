@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Comm100 module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function comm100_requirements($phase) {
+  if ($phase == 'runtime') {
+    $requirements = [];
+    $config = \Drupal::config('comm100.settings');
+    $configured = $config->get('site_id') && $config->get('plan_id');
+
+    if ($configured) {
+      $requirements['livechat'] = [
+        'title' => t('Comm100 LiveChat module'),
+        'description' => t('The Comm100 Integration is configured. You are all set!'),
+        'severity' => REQUIREMENT_OK,
+        'value' => t('Configured'),
+      ];
+    }
+    else {
+      $requirements['livechat'] = [
+        'title' => t('Comm100 LiveChat module'),
+        'description' => t('LiveChat module has not been configured yet. Please configure its settings from the <a href=":url">LiveChat settings page</a>.', [':url' => \Drupal::url('comm100.settings')]),
+        'severity' => REQUIREMENT_ERROR,
+        'value' => t('Not configured'),
+      ];
+    }
+    return $requirements;
+  }
+}

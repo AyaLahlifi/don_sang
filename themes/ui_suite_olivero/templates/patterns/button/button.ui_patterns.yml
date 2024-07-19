@@ -1,0 +1,45 @@
+button:
+  label: Button
+  description: Buttons allow users to take actions, and make choices, with a single tap.
+  variants:
+    default:
+      label: Default
+    primary:
+      label: Primary
+    small:
+      label: Small
+  fields:
+    label:
+      type: text
+      label: Label
+      description: The button label
+      required: true
+      preview: Submit
+  settings:
+    url:
+      type: url
+      label: URL
+      description: The button URL
+      required: true
+      preview: http://example.com
+    target_blank:
+      type: boolean
+      label: New Tab
+      description: Open link in a new tab instead the current one
+    fa_icon_style:
+      type: select
+      label: Icon Style
+      description: The button icon style
+      options:
+        fa: Regular
+        fas: Solid
+        fab: Brand
+        fal: Light (Premium)
+        fad: Duotone (Premium)
+        fat: Thin (Premium)
+      preview: fab
+    fa_icon:
+      type: textfield
+      label: Icon
+      description: Font Awesome Icon <a href="https://fontawesome.com/search">check this</a>
+      preview: fa-drupal

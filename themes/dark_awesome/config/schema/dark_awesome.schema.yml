@@ -1,0 +1,5 @@
+# Required to validate default theme settings.
+
+dark_awesome.settings:
+  type: theme_settings
+  label: 'dark_awesome settings'

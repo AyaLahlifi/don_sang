@@ -1,0 +1,11 @@
+# Main theme library.
+global:
+  css:
+    base:
+      css/colors.css: {}
+      css/table.css: {}
+      css/font_size.css: {}
+    component:
+      css/components/fontawesome.css: {}
+      css/components/button.css: { weight: 1 }
+      css/components/form.css: { weight: 1 }

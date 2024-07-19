@@ -1,0 +1,52 @@
+<section id="contact-page">
+      <div class="container">
+        <div class="row contact-bg">
+          <div class="col-md-12">
+            {{ content.field_contact_map.0 }}
+          </div>
+        </div>
+      </div>  
+    </section> 
+
+
+
+     <section id="contact">
+      <div class="container">
+        <div class="row contact-bg">
+          <div class="col-md-12  enquiry-form wow fadeInUp">
+            <h4>SEND YOUR QUERY</h4>
+            	{{ content.field_contact_form.0 }}
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact-info">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-5 contact-address">
+              <div class="contact-inner">
+                <h4>ADDRESS</h4>
+                <h6>{{ content.field_hospital_name.0 }}</h6>
+                <p>{{ content.field_hospital_det.0 }}</p>
+              </div>
+            </div>
+
+            <div class="col-md-4 contact-address">
+            <div class="contact-inner">
+              <h4>MAIL</h4>
+              <a href="{{ content.field_mail[0]['#url']|render }}">{{ content.field_mail[0]['#title'] }}</a>
+            </div>  
+            </div>
+
+            <div class="col-md-3 contact-address">
+              <div class="contact-inner">
+              <h4>CALL</h4>
+              <p>{{ content.field_phone.0 }}</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>

@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Contains \Drupal\aws_bedrock_chat.module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function aws_bedrock_chat_theme($existing, $type, $theme, $path) {
+  return [
+    'aws_bedrock_chat_form_wrapper' => [
+      'variables' => ['form' => NULL, 'toggle_icon_url' => NULL],
+    ],
+  ];
+}

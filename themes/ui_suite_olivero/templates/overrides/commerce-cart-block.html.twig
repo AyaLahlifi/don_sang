@@ -1,0 +1,25 @@
+{{ attach_library('olivero/feed') }}
+
+<a href="{{ url }}"{{ attributes.addClass('feed-icon') }}>
+  <span class="feed-icon__label">
+    {{ count_text }}
+  </span>
+  <span class="feed-icon__icon" aria-hidden="true">
+    {% include "@ui_suite_olivero/images/cart.svg" %}
+    {# <span class="cart-block--summary__icon">{{ icon }}</span> #}
+  </span>
+</a>
+
+{# @todo Test and style commerce-cart-block.content #}
+{% if content %}
+<div class="cart-block--contents">
+  <div class="cart-block--contents__inner">
+    <div class="cart-block--contents__items">
+      {{ content }}
+    </div>
+    <div class="cart-block--contents__links">
+      {{ links }}
+    </div>
+  </div>
+</div>
+{% endif %}

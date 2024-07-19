@@ -1,0 +1,13 @@
+name: MailGo
+description: Module implements MailGo library behaviour.
+package: Filters
+type: module
+core_version_requirement: ^9 || ^10
+configure: mailgo.global_config_form
+libraries:
+  - mailgo/mailgo
+
+# Information added by Drupal.org packaging script on 2024-06-28
+version: '1.0.0-beta3'
+project: 'mailgo'
+datestamp: 1719592460

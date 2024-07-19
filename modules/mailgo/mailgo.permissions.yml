@@ -1,0 +1,4 @@
+administer mailgo:
+  title: 'Administer MailGo Configuration'
+  description: 'Allow to access the administration form to configure MailGo'
+  restrict access: true

@@ -1,0 +1,42 @@
+
+{% set date = node.createdtime|format_date('news-published-date') %}
+
+  <section id="news-page" class="news-detail-page">
+      <div class="container">
+
+      <div class="items wow fadeInUp">
+          <div class="news-listing">
+          <div class="row">
+            <div class="col-md-12 news-image">
+              <div class="news-images">
+               <img src="{{ content.field_latest_news_image.0 }}" alt="doctor-img" class="img-responsive">
+               </div>
+            </div>
+            <div class="col-md-12 news-content  text-center">
+                <div class="row">
+                  <div class="col-md-12 content">
+                  <h3>{{ content.field_news_title.0 }}</h3>
+                    <div class="news-time">
+                      <i class="fa fa-clock-o"></i>
+                      <p>{{ date}}</p>
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <p>{{ user.displayname }}</p>
+                    </div>
+                    <div class="news-detail-description">
+                    {{ content.body.0 }}
+                    {{ content.field_detailed_news.0 }}
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+          <div class="news-details-btn text-center">
+            <a href="{{url('<front>')}}news" class="btn btn-infos">{{'Back To News'| t}}</a>
+            {{ content.field_read_to_next.0 }}
+          </div>
+
+       </div>
+       </section> 
+       <!--  -->

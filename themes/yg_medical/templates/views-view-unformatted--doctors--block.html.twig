@@ -1,0 +1,22 @@
+<!-- Docters Section -->
+    <section id="docters" class="docters-bg" >
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-12 docters-title">
+            <h2>Docters</h2>
+          </div>
+        </div>
+
+        <div class="row">
+         {% for row in rows %}
+                 {{ row.content }}
+              {% endfor %}
+        </div>  
+         <div class="all-docters-btn">
+        <a href="{{ basepath }}/doctors" class="btn btn-infos">View All Docters</a>
+        </div>
+
+      </div>
+    </section>
+<!-- End Docters Section -->

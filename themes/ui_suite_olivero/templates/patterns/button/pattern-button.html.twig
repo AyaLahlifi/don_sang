@@ -1,0 +1,15 @@
+{% if variant and variant|lower != 'default' %}
+  {% set attributes = attributes.addClass('button--' ~ variant|lower) %}
+{% endif %}
+{% if target_blank %}
+  {% set attributes = attributes.setAttribute('target', '_blank') %}
+{% endif %}
+
+<a{{ attributes.addClass('button').setAttribute('href', url) }}>
+  {% if fa_icon %}
+    <i class="{{fa_icon_style}} {{fa_icon}}"></i>
+    <span class="link-text">{{ label }}</span>
+  {% else %}
+    {{ label }}
+  {% endif %}
+</a>

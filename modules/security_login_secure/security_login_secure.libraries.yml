@@ -1,0 +1,13 @@
+security_login_secure.admin:
+  version: VERSION
+  css:
+    layout:
+      css/security_login_secure.module.css: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+
+security_login_secure.Vtour:
+  version: VERSION
+  js:
+    js/dru_visual_tour.js: {}

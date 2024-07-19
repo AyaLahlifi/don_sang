@@ -1,0 +1,28 @@
+<?php
+
+/**
+ * @file
+ * Installation and requirement actions for the AWS Bedrock Chat module.
+ */
+
+/**
+ * Implements hook_requirements().
+ */
+function aws_bedrock_chat_requirements($phase) {
+  $requirements = [];
+
+  // Check only during runtime.
+  if ($phase === 'runtime') {
+    // Check if the AWS SDK class exists.
+    if (!class_exists('Aws\BedrockAgentRuntime\BedrockAgentRuntimeClient')) {
+      $requirements['aws_bedrock_chat_sdk_missing'] = [
+        'title' => t('AWS Bedrock Chat'),
+        'value' => t('Missing'),
+        'description' => t('The AWS SDK for PHP is required for the AWS Bedrock Chat module to function properly. Please install it by running <strong>composer require aws/aws-sdk-php</strong>.'),
+        'severity' => REQUIREMENT_ERROR,
+      ];
+    }
+  }
+
+  return $requirements;
+}

@@ -1,0 +1,4 @@
+services:
+  mailgo:
+    class: Drupal\mailgo\MailGoManager
+    arguments: ['@config.factory', '@entity_type.manager']

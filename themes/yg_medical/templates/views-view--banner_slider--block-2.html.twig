@@ -1,0 +1,42 @@
+
+
+<!-- CLIENTS SECTION -->
+    <section id="clients-testimonial" class="wow fadeInUp clients-bg"> 
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2>Client Testimonials</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="loop owl-carousel owl-theme">
+          
+            {% for result in view.result %}
+          <div class="item">
+            <div class="row">
+              <div class="col-md-2">
+                  <img src="{{ file_url(view.field.uri.value(view.result[loop.index-1])) }}" alt="testimonial img" class="img-responsive">
+              </div>
+              <div class="col-md-10 testimonial-description wow fadeInRight">
+              <blockquote>
+                <p>{{ view.field.body.value(view.result[loop.index-1]) |striptags }}</p>
+                  <div class="testimonial-name">
+                    <h6>{{ view.field.field_testi_name.value(view.result[loop.index-1]) }}</h6>
+                    <p>{{ view.field.field_testi_client_name.value(view.result[loop.index-1]) }}</p>
+                  </div> 
+               </blockquote> 
+              </div>
+            </div>  
+          </div>
+            {% endfor %} 
+
+        
+
+        </div>
+        </div>
+
+      </div>
+    </section>
+<!-- END CLIENTS SECTION -->

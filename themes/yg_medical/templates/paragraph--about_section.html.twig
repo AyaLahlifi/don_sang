@@ -1,0 +1,22 @@
+<!-- ABOUT SECTION -->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-6">
+            <img src="{{ content.field_about_image.0 }}" alt="about team img" class="img-responsive">
+          </div>
+
+          <div class="col-md-6 about-content">
+            <h2>{{ content.field_about_title.0 }}</h2>
+            <p><span>{{ content.field_about_sub_title.0 }}</span></p>
+            <p>{{ content.field_about_description.0}}</p>
+            <a href="{{ content.field_about_link_text[0]['#url']|render }}" class="btn btn-infos">{{ content.field_about_link_text[0]['#title']|render}}</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+<!-- END ABOUT SECTION -->
+
+{{ content.field_department_section }}

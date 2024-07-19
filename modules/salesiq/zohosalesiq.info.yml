@@ -1,0 +1,14 @@
+name: Zoho SalesIQ
+type: module
+description: Adds Zoho SalesIQ  widget code to all your site's pages.
+package: Utility
+core_version_requirement: ^8.0 || ^9 || ^10
+configure: zohosalesiq.settings
+# version: '10.x-2.x'
+#core: '10.x'
+# project: 'salesiq'
+
+# Information added by Drupal.org packaging script on 2024-05-03
+version: '10.2.0'
+project: 'salesiq'
+datestamp: 1714710715

@@ -1,0 +1,612 @@
+<?php
+/**
+ * @File
+ * Website Security module for Drupal 8.
+ */
+use Symfony\Component\HttpFoundation;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\user\Entity\User;
+use Drupal\user\UserInterface;
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+
+function security_login_secure_help($route_name, RouteMatchInterface $route_match){
+	switch ($route_name) {
+		case 'help.page.security_login_secure':
+	      $output = '<h3>' . t('About') . '</h3>';
+	      $output .= '<p>' . t('This module provides login security, registration security, brute force attack prevention, IP monitoring and IP blacklisting, DOS attack prevention, strong password enforcement, etc. We provide you enterprise-level security, protecting your Drupal site from hackers and malware.') . '</p>';
+	      $output .= '<h5>' . t('Brute Force Protection (Login Security)') . '</h5>';
+	      $output .= '<p>' . t('You can keep track of user’s login attempts and set notifications for administrators and users of unusual activities if someone exceeds allowed failed login attempts. You can set the number of allowed login attempts and protect the user accounts from attack.') . '</p>';
+	      $output .= '<h5>' . t('IP Blocking') . '</h5>';
+	      $output .= '<p>' . t('Manual and automatic blocking of IP address. This will help to protect your site accessing from unwanted IP addresses and crawlers, which uses your server resource and bandwidth.') . '</p>';
+	      $output .= '<h5>' . t('Reporting') . '</h5>';
+	      $output .= '<p>' . t('You get the option for filtering reports with various criteria like username, IP address, and status of the report entries. Also, you can download reports in CSV format. ') . '</p>';
+	      $output .= '<p>' . t('For more information, <a target="_blank" href="https://www.drupal.org/project/security_login_secure">see the online documentation for the Website Security module</a>.') . '</p>';
+	      return $output;
+	}
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function security_login_secure_form_alter(&$form, &$form_state, $form_id) {
+	
+	$db_var = \Drupal::config('security_login_secure.settings');
+	$enable_ip_bruteforce = $db_var->get('website_security_ip_enable_bruteforce');
+	$enable_user_bruteforce = $db_var->get('website_security_user_enable_bruteforce');
+	$enable_ip_blocking = $db_var->get('website_security_enable_ip_blocking');
+
+	if ($enable_ip_blocking == 1) {
+		// If IP Blocking is enabled then we will check that is Client IP in the list of blocking. If client IP is in the blocking list then we will show 403 page to the user. 
+		if (website_security_block_current_ip()){
+			global $base_url;
+			$response = new RedirectResponse($base_url . '/error_403_page');
+            $response->send();
+		}
+	}
+
+	if ($form_id == 'user_login_form') {
+		$form['#validate'][] = 'website_security_validate';
+	}
+
+	\Drupal::service('page_cache_kill_switch')->trigger();
+}
+
+function website_security_validate(&$form, &$form_state){
+	
+	global $base_url;
+	
+	$username = $form_state->getValue('name');
+	$password = $form_state->getValue('pass');
+	$authenticate = \Drupal::service('user.auth')->authenticate($username, $password);
+
+	$account = user_load_by_name($username);
+	$ip_address = \Drupal::request()->getClientIp();
+
+	// The IP's that were blocked due to failed login attempts will be unblocked in this function if there blocking time has been expired.
+	website_security_clear_events_ips($ip_address, $username);
+
+	// Here we will check if client IP is blocked due to failed login attempts then we need to show him the error message.
+	if (website_security_block_current_ip_for_login()){
+		$form_state->clearErrors();
+		$form_state->setErrorByName('test',t('IP BLOCKED: Your IP is blocked. Please contact your administrator.'));
+		return;
+	}
+
+	$db_var = \Drupal::config('security_login_secure.settings');
+
+	$whitelist_users = $db_var->get('website_security_disable_user_blocking');
+
+	// If the client IP is whitelisted then we need not to block the user IP even if client makes various failed login attempts.
+	if (website_security_whitelist_current_ip()) {
+		// If whitelist user attempts checkbox is checked then user will not get blocked bcz of Drupal default behaviour (blocks user for 5 failed login attempts)
+		if ($whitelist_users == 1)
+			website_security_clear_flood_table_events_user();
+
+		// This is to ensure that if client IP is whitelisted then that IP should never get blocked due to Drupal default behaviour (blocks IP for 25 or 30 failed login attempts)
+		website_security_clear_flood_table_events_ip();
+	}
+
+	
+	$allowed_attempts_user = $db_var->get('website_security_allowed_attempts_user');
+	$enable_ip_bruteforce = $db_var->get('website_security_ip_enable_bruteforce');
+	$enable_user_bruteforce = $db_var->get('website_security_user_enable_bruteforce');	
+
+	// If IP bruteforce is enabled and client IP is not whitelisted then we will perform IP bruteforce protection
+	if ($enable_ip_bruteforce == 1 && !website_security_whitelist_current_ip()) {
+		// This is to clear failed login attempts stored in Drupal flood table so that Drupal default behaviour of blocking IP does not dominate
+		website_security_clear_flood_table_events_ip();
+		// If authentication is failed then we have to take actions accordingly
+		if ($authenticate == false) {
+			$track_time = $db_var->get('website_security_ip_track_time');
+			$track_time = !empty($track_time) ? $track_time *= 3600 : 0;
+			$timestamp = website_security_get_timestamp_ip($ip_address);
+			$time_diff_ip = \Drupal::time()->getRequestTime() - $timestamp;
+
+			// We have to clear all the failed login attempts of that IP if tracking time is completed. After that those failed login attempts will never be counted
+			if ($time_diff_ip > $track_time && $track_time > 0)
+				website_security_clear_events_ips($ip_address, $username, false);
+
+			$ip_attempts = @website_security_get_ip_attempts($ip_address);
+			$allowed_attempts_ip = $db_var->get('website_security_ip_allowed_attempts');
+			$attack_detection = $db_var->get('website_security_ip_attack_detection');
+
+			// Add failed IP attempt in that client IP entry
+			if ($allowed_attempts_ip > 0){
+				$ip_attempts += 1;
+				website_security_add_ip($username, $ip_address, $ip_attempts);
+			}
+
+			// If no of failed IP login attempts have reached the limit of allowed attempts then block that IP from login
+			if ( $ip_attempts >= $allowed_attempts_ip && $allowed_attempts_ip > 0 ) {
+
+				website_security_block_ip('blocked', $ip_address, $username);	
+				$form_state->clearErrors();
+				$form_state->setErrorByName('test',t('Your IP is blocked. You have reached the maximum failed login limit of '.$allowed_attempts_ip.'. Please contact your administrator.'));
+
+				// This is to send email notification on blocking
+				if (!isset($_SESSION['ip_block']))
+					website_security_send_email_notification($username, $ip_address, 'ip_block');
+
+
+			}elseif ( $ip_attempts >= $attack_detection && $attack_detection > 0 && !isset($_SESSION['ip_attack'])){
+				//  If no of failed IP login attempts have reached the limit of attack detection attempts then send an email notification
+				website_security_send_email_notification($username, $ip_address, 'ip_attack');
+				
+			}
+		}
+		
+	}
+
+	// If user bruteforce is enabled and client IP is not whitelisted then we will perform user bruteforce protection
+	if ($enable_user_bruteforce == 1 && !website_security_whitelist_current_ip()) {
+		// This is to clear failed login attempts stored in Drupal flood table so that Drupal default behaviour of blocking user does not dominate
+		website_security_clear_flood_table_events_user();
+		// The users that were blocked due to failed login attempts will be unblocked in this function if there blocking time has been expired.
+		$clear_error = website_security_clear_events_users($ip_address, $username, $account);
+		$allowed_attempts_user = $db_var->get('website_security_user_allowed_attempts');
+
+		// If the user is unblocked then we have to clear all errors that were generated by default Drupal validations before our validation function was called. The error was that user is already blocked(bcz right now we have unblocked that user in our validation). If we do not clear that error then it will show that user is blocked even if we have unblocked that user bcz it was stored in errors already.
+		if ($clear_error == 1) {
+			$form_state->clearErrors();
+		}
+		// If authentication is failed then we have to take actions accordingly
+		if ($authenticate == false && !empty($account) && $account->status->value == 1) {
+			
+			$track_time = $db_var->get('website_security_user_track_time');
+			$track_time = !empty($track_time) ? $track_time *= 3600 : 0;
+
+			$timestamp = website_security_get_timestamp_user($username);
+			$time_diff_user = \Drupal::time()->getRequestTime() - $timestamp;
+
+			// We have to clear all the failed login attempts of that user if tracking time is completed. After that those failed login attempts will never be counted
+			if ($time_diff_user > $track_time && $track_time > 0) 
+				website_security_clear_events_users($ip_address, $username, $account, false);
+
+			$user_attempts = @website_security_get_user_attempts($username);
+
+			$attack_detection = $db_var->get('website_security_user_attack_detection');
+			
+			// Add failed user attempt
+			if ($allowed_attempts_user > 0){
+				$user_attempts += 1;
+				website_security_add_user($username, $ip_address, $user_attempts);
+			}
+			
+			// If no of failed user login attempts have reached the limit of allowed attempts then block that user from login
+			if ( $user_attempts >= $allowed_attempts_user && $allowed_attempts_user > 0 ) {
+
+				website_security_block_user($ip_address, $username);
+				$form_state->clearErrors();
+				$form_state->setErrorByName('test',t('Sorry, there have been '.$allowed_attempts_user.' failed login attempts for this account. It is temporarily blocked.'));
+
+				// This is to send email notification on blocking
+				if (!isset($_SESSION['user_block']))
+					website_security_send_email_notification($username, $ip_address, 'user_block');
+
+				return;
+
+			}elseif ( $user_attempts >= $attack_detection && $attack_detection > 0 && !isset($_SESSION['user_attack']) ){
+				//  If no of failed user login attempts have reached the limit of attack detection attempts then send an email notification
+				website_security_send_email_notification($username, $ip_address, 'user_attack');
+			}
+
+			$show_remaining_attempts = $db_var->get('website_security_show_remaining_attempts');
+			$remaining_attempts = !empty($allowed_attempts_user) ? $allowed_attempts_user - $user_attempts : 0;
+
+			// If show remaining attempts is enabled then show them to user
+			if ($show_remaining_attempts == 1){
+				$form_state->clearErrors();
+				$form_state->setErrorByName('test',t('Invalid Credentials. You have '.$remaining_attempts.' attempts remaining.'));
+			}
+
+		}elseif (website_security_user_blocked_invalid_attempt($username)){
+			// If user authentication is successful but that user is blocked due to failed login attempts then show this error message to that user.
+			$form_state->clearErrors();
+			$form_state->setErrorByName('test',t('Sorry, there have been '.$allowed_attempts_user.' failed login attempts for this account. It is temporarily blocked.'));
+		}
+	}
+	
+}
+
+function website_security_user_blocked_invalid_attempt($username){
+	$db = \Drupal::database();
+	$user_blocked = $db->select('miniorange_website_security_user_track', 'ns_user')
+	      ->fields('ns_user', ['blocked_timestamp'])
+	      ->condition('uname', $username)
+	      ->execute()
+	      ->fetchField();
+
+	return $user_blocked;
+}
+
+function website_security_get_user_attempts($username){
+	$user_attempts = 0;
+	$db = \Drupal::database();
+	$user_exists = $db->select('miniorange_website_security_user_track','uname')
+	  ->fields('uname')
+	  ->condition('uname', $username)
+      ->countQuery()
+      ->execute()
+      ->fetchField();
+
+    if ($user_exists == 0) {
+    	$db->insert('miniorange_website_security_user_track')
+    	->fields([
+    		'uname' => $username,
+    		'failed_timestamp' => \Drupal::time()->getRequestTime(),
+    	])
+    	->execute();
+    }else{
+		$user_attempts = $db->select('miniorange_website_security_user_track', 'ns_user')
+	      ->fields('ns_user', ['login_attempts'])
+	      ->condition('uname', $username)
+	      ->execute()
+	      ->fetchField();
+	}
+    
+    return $user_attempts;
+}
+
+function website_security_get_ip_attempts($ip_address){
+	$ip_attempts = 0;
+	$db = \Drupal::database();
+	$ip_exists = $db->select('miniorange_website_security_ip_track', 'ip_address')
+	  ->fields('ip_address')
+	  ->condition('ip_address', $ip_address)
+      ->countQuery()
+      ->execute()
+      ->fetchField();
+
+    if ($ip_exists == 0) {
+    	$db->insert('miniorange_website_security_ip_track')
+    	->fields([
+    		'ip_address' => $ip_address,
+    		'failed_timestamp' => \Drupal::time()->getRequestTime(),
+    	])
+    	->execute();
+    }else{
+		$ip_attempts = $db->select('miniorange_website_security_ip_track', 'ns_ip')
+	      ->fields('ns_ip', ['login_attempts'])
+	      ->condition('ip_address', $ip_address)
+	      ->execute()
+	      ->fetchField();
+	}
+    
+    return $ip_attempts;
+}
+
+function website_security_add_user($username, $ip_address, $user_attempts){
+	
+	$db = \Drupal::database();
+
+	$db->update('miniorange_website_security_user_track')
+	  ->fields(['login_attempts' => $user_attempts])
+	  ->condition('uname', $username, '=')
+	  ->execute();
+
+	website_security_add_to_reports($ip_address, $username, 'User Login Failed');
+}
+
+function website_security_add_ip($username, $ip_address, $ip_attempts){
+
+	$db = \Drupal::database();
+
+	$db->update('miniorange_website_security_ip_track')
+	  ->fields(['login_attempts' => $ip_attempts])
+	  ->condition('ip_address', $ip_address, '=')
+	  ->execute();
+
+	website_security_add_to_reports($ip_address, $username, 'IP Login Failed');
+}
+
+function website_security_block_ip($type, $ip_address, $username){
+	$db = \Drupal::database();
+
+	$db->update('miniorange_website_security_ip_track')
+	  ->fields([
+	  	'ip_type' => $type,
+	  	'by_admin' => 0,
+	  	'blocked_timestamp' => \Drupal::time()->getRequestTime(),
+	  ])
+	  ->condition('ip_address', $ip_address, '=')
+	  ->execute();
+
+	website_security_add_to_reports($ip_address, $username, 'IP Blocked');
+}
+
+function website_security_block_user($ip_address, $username){
+	$account = user_load_by_name($username);
+
+	if ($account->status->value == 1) {
+      $account->status->setValue(0);
+      $account->save();
+
+      $db = \Drupal::database();
+      $db->update('miniorange_website_security_user_track')
+    	->fields([
+    		'blocked_timestamp' => \Drupal::time()->getRequestTime(),
+    	])
+    	->condition('uname', $username, '=')
+    	->execute();
+	}
+
+	website_security_add_to_reports($ip_address, $username, 'User Blocked');
+}
+
+function website_security_block_current_ip_for_login(){
+	$user_ip = \Drupal::request()->getClientIp();
+	$db = \Drupal::database();
+	$ip_exists = $db->select('miniorange_website_security_ip_track', 'ns_ip')
+	  ->fields('ns_ip', ['by_admin','ip_address','ip_type'])
+	  ->condition('ip_address', $user_ip)
+      ->execute()
+      ->fetchAll();
+
+    if ((count($ip_exists) > 0 && $ip_exists[0]->ip_type == 'blocked'))
+	    return 1;
+
+    return 0;
+}
+
+function website_security_whitelist_current_ip(){
+	$db_var = \Drupal::config('security_login_secure.settings');
+	$enable_ip_whitelisting = $db_var->get('website_security_enable_ip_whitelisting');
+	if ($enable_ip_whitelisting == 1) {
+		$whitelist_ips = $db_var->get('website_security_white_ips');
+		$whitelist_ips = explode(';',$whitelist_ips);
+		$user_ip = \Drupal::request()->getClientIp();
+
+		if(array_search($user_ip, $whitelist_ips) === FALSE){
+	        return FALSE;
+	    }
+
+	    return TRUE;
+	}
+
+	return FALSE;
+	
+}
+
+ function website_security_block_current_ip(){
+	$db_var = \Drupal::config('security_login_secure.settings');
+	$block_ips = $db_var->get('website_security_block_ips');
+	$block_ips = explode(';',$block_ips);
+	$user_ip = \Drupal::request()->getClientIp();
+
+	if(array_search($user_ip, $block_ips) === FALSE){
+        return FALSE;
+    }
+    else {
+    	if (\Drupal::currentUser()->isAuthenticated())
+			user_logout();
+
+     	return TRUE;
+ 	}
+
+ }
+
+function website_security_clear_flood_table_events_user(){
+	$db = \Drupal::database();
+	if($db->schema()->tableExists('flood')) {
+		try {
+			$db->delete('flood')
+			->condition('event', 'user.failed_login_user', '=')
+			->execute();
+		} catch (\Exception $exception) {
+			\Drupal::messenger()->addError(t('Something went wrong. Please see your recent log messages for details'));
+			\Drupal::logger('security_login_secure.info')->info($exception);
+		}
+	}
+}
+
+function website_security_clear_flood_table_events_ip(){
+	$db = \Drupal::database();
+	if($db->schema()->tableExists('flood')) {
+		try {
+			$db->delete('flood')
+			->condition('event', 'user.failed_login_ip', '=')
+			->execute();
+		} catch (\Exception $exception) {
+			\Drupal::messenger()->addError(t('Something went wrong. Please see your recent log messages for details'));
+			\Drupal::logger('security_login_secure.info')->info($exception);
+		}
+	}
+}
+
+function website_security_clear_events_users($ip_address, $username, $account, $is_blocked=true){
+	$db = \Drupal::database();
+	$deleted = 0;
+	$db_var = \Drupal::config('security_login_secure.settings');
+	$blocked_time_period = $db_var->get('website_security_user_block_time_period');
+
+	if ($is_blocked == true){
+		
+		if ($blocked_time_period > 0){
+			$blocked_time_period *= 3600;
+			$time = \Drupal::time()->getRequestTime() - $blocked_time_period;
+			
+		 	if (!empty($account) && $account->status->value == 0) {
+				$deleted = $db->delete('miniorange_website_security_user_track')
+				  ->condition('blocked_timestamp', $time, '<')
+				  ->condition('uname', $username, '=')
+				  ->execute();
+
+				if ($deleted) {
+					$account->status->setValue(1);
+					$account->save();
+					website_security_add_to_reports($ip_address, $username, 'Unblocked User');
+					website_security_delete_session_values();
+					return 1;
+				}
+		 	}
+		}
+
+	}else{
+		$deleted = $db->delete('miniorange_website_security_user_track')
+			->condition('uname', $username, '=')
+			->execute();
+
+		return 0;
+	}
+
+}
+
+function website_security_clear_events_ips($ip_address, $username, $is_blocked=true){
+	$db = \Drupal::database();
+	$var1 = 'blocked';
+	$var2 = 0;
+	$deleted = 0;
+	$db_var = \Drupal::config('security_login_secure.settings');
+	$blocked_time_period = $db_var->get('website_security_ip_block_time_period');
+	if ($is_blocked == true){
+		
+		if ($blocked_time_period > 0){
+			$blocked_time_period *= 3600;
+			$time = \Drupal::time()->getRequestTime() - $blocked_time_period;
+			
+		    $deleted = $db->delete('miniorange_website_security_ip_track')
+			  ->condition('blocked_timestamp', $time, '<')
+			  ->condition('ip_address', $ip_address, '=')
+			  ->condition('ip_type', $var1, '=')
+			  ->condition('by_admin', $var2, '=')
+			  ->execute();
+
+			if ($deleted){
+				website_security_add_to_reports($ip_address, $username, 'Unblocked IP');
+				website_security_delete_session_values();
+			}
+		}
+
+	}else{
+		$deleted = $db->delete('miniorange_website_security_ip_track')
+		  ->condition('ip_address', $ip_address, '=')
+		  ->condition('by_admin', $var2, '=')
+		  ->execute();
+	}
+}
+
+function website_security_get_timestamp_user($username){
+	$db = \Drupal::database();
+
+	$user_timestamp = $db->select('miniorange_website_security_user_track', 'ns_user')
+	  ->fields('ns_user', ['failed_timestamp'])
+	  ->condition('uname', $username)
+	  ->execute()
+	  ->fetchField();
+
+	return $user_timestamp;
+}
+
+function website_security_get_timestamp_ip($ip_address){
+	$db = \Drupal::database();
+
+	$ip_timestamp = $db->select('miniorange_website_security_ip_track', 'ns_ip')
+	  ->fields('ns_ip', ['failed_timestamp'])
+	  ->condition('ip_address', $ip_address)
+	  ->execute()
+	  ->fetchField();
+
+	return $ip_timestamp;
+}
+
+function website_security_add_to_reports($ip_address, $username, $status){
+	$db = \Drupal::database();
+	$db->insert('miniorange_website_security_reports')
+    	->fields([
+    		'ip_address' => $ip_address,
+    		'uname' => $username,
+    		'status' => $status,
+    		'timestamp' => \Drupal::time()->getRequestTime(),
+    	])
+    	->execute();
+}
+
+function website_security_send_email_notification($username, $ip_address, $reason){
+	$params = array("username" => $username, "ip_address" => $ip_address);
+	$email_list = \Drupal::config('security_login_secure.settings')->get('website_security_email_id');
+    $site_mail = \Drupal::config('system.site')->get('mail');
+    $email_to = !empty($email_list) ? $email_list . ', ' . $site_mail : $site_mail;
+
+	if ($email_to !== '') {
+		$from = \Drupal::config('system.site')->get('mail');
+    	$language = \Drupal::languageManager()->getDefaultLanguage();
+    	return \Drupal::service('plugin.manager.mail')->mail('security_login_secure', $reason, $email_to, $language, $params, $from, TRUE);
+	}
+    
+}
+
+/**
+ * Implements hook_mail().
+ */
+function security_login_secure_mail($key, &$message, $params) {
+
+  $site_name = \Drupal::config('system.site')->get('name');
+
+  switch ($key) {
+    case 'user_attack':
+      $_SESSION['user_attack'] = TRUE;
+      $message['subject'] = t('Login attack detected at '.$site_name.' by ' . $params['username']);
+      $message['body'][] = t('The Attack Detection limit of '.$params['username'].' has reached. Please take actions accordingly.');
+      break;
+
+    case 'ip_attack':
+      $_SESSION['ip_attack'] = TRUE;
+      $message['subject'] = t('Login attack detected at '.$site_name.' by ' . $params['ip_address']);
+      $message['body'][] = t('The Attack Detection limit of '.$params['ip_address'].' has reached. Please take actions accordingly.');
+      break;
+
+    case 'user_block':
+      $_SESSION['user_block'] = TRUE;
+      $message['subject'] = t('The user '.$params['username'].' has been blocked.');
+      $message['body'][] = t('The user '.$params['username'].' has been blocked due to amount of invalid login attempts.');
+      break;
+
+    case 'ip_block':
+      $_SESSION['ip_block'] = TRUE;
+      $message['subject'] = t('The IP address '.$params['ip_address'].' has been blocked.');
+      $message['body'][] = t('The IP address '.$params['ip_address'].' has been blocked due to amount of invalid login attempts.');
+      break;
+
+  }
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function security_login_secure_user_login(UserInterface $account) {
+	$db = \Drupal::database();
+	$ip_address = Drupal::request()->getClientIp();
+  	$deleted = $db->delete('miniorange_website_security_user_track')
+			->condition('uname', $account->getAccountName(), '=')
+			->execute();
+    website_security_add_to_reports($ip_address, $account->getAccountName(), 'Success');
+    website_security_delete_session_values();
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ */
+function security_login_secure_user_update(UserInterface $account) {
+  
+  if ($account->isActive()) {
+  	$db = \Drupal::database();
+	$ip_address = Drupal::request()->getClientIp();
+    $deleted = $db->delete('miniorange_website_security_user_track')
+			->condition('uname', $account->getAccountName(), '=')
+			->execute();
+	if ($deleted) {
+		website_security_delete_session_values();
+	}
+  }
+}
+
+function website_security_delete_session_values(){
+	unset($_SESSION['user_attack']);
+	unset($_SESSION['user_block']);
+	unset($_SESSION['ip_attack']);
+	unset($_SESSION['ip_block']);
+}

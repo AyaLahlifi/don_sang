@@ -1,0 +1,67 @@
+customize:
+  interface:
+    chat_width: 40%
+    disable_shadow: 0
+    header_text: 'Chat with us'
+    start_text: 'Hi, how can we assist you today?'
+    style:
+      header:
+        background_color:
+          color_code: '#0e1e45'
+          color_picker: '#0e1e45'
+      header_text:
+        color:
+          color_code: '#ffffff'
+          color_picker: '#ffffff'
+      input_focus:
+        border:
+          color_code: '#0e1e45'
+          color_picker: '#0e1e45'
+      main:
+        background:
+          color_code: '#ffffff'
+          color_picker: '#ffffff'
+        border_color:
+          color_code: '#0e1e45'
+          color_picker: '#0e1e45'
+      response:
+        background_color:
+          color_code: '#f1f0f0'
+          color_picker: '#f1f0f0'
+      response_text:
+        color:
+          color_code: '#000000'
+          color_picker: '#000000'
+      submit_focus:
+        outline:
+          color_code: '#0e1e45'
+          color_picker: '#0e1e45'
+      submit_inner_bottom:
+        fill:
+          color_code: '#0e1e45'
+          color_picker: '#0e1e45'
+      submit_inner_top:
+        fill:
+          color_code: '#0e1e45'
+          color_picker: '#0e1e45'
+      submit_outer:
+        fill:
+          color_code: '#0e1e45'
+          color_picker: '#0e1e45'
+      toggle_outer:
+        fill:
+          color_code: '#0071bc'
+          color_picker: '#0071bc'
+      toggle_inner:
+        fill:
+          color_code: '#0b4778'
+          color_picker: '#0b4778'
+      user:
+        background_color:
+          color_code: '#ccdef7'
+          color_picker: '#ccdef7'
+      user_text:
+        color:
+          color_code: '#000000'
+          color_picker: '#000000'
+    user_input_placeholder: 'Type your message here...'
