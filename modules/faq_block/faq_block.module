@@ -1,0 +1,42 @@
+<?php
+
+/**
+ * @file
+ * Contains faq_block implemented hooks.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function faq_block_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.faq_block':
+    $output = '';
+    $output .= '<h3>' . t('About') . '</h3>';
+    $output .= '<p>' . t('FAQ Block provices the backend configuration block to add the list of commonly asked questions and answers about a specific topic.') . '</p>';
+    $output .= '<p>' . t('We can place the block from structure - block layout or from the layout builder.') . '</p>';
+    $output .= t('Visit the <a href=":project_link">FAQ Block project pages</a> on Drupal.org for more information.', [
+      ':project_link' => 'https://www.drupal.org/project/faq_block',
+    ]);
+    $output .= '</p>';
+
+    return $output;
+  }
+}
+
+/**
+* Implements hook_theme().
+*/
+function faq_block_theme($existing, $type, $theme, $path) {
+  $path_to_templates = \Drupal::service('extension.path.resolver')->getPathname('module', 'faq_block');
+  $path_to_templates = $path_to_templates . '/templates';
+
+  return [
+    'faq_block' => [
+      'variables' => ['faqs' => NULL, 'faqs_data' => NULL],
+      'path' => $path_to_templates . '/block'
+    ],
+  ];
+}

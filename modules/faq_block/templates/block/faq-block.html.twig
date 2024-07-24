@@ -1,0 +1,55 @@
+{#
+/**
+ * @file
+ *
+ * Default template for faq block.
+ *
+ * Available variables:
+ * - faqs: Array of faq related file details.
+ *   use {{ faq.question }} and faq.answer['value']inside the loop
+ *
+ * @ingroup themeable
+ */
+ #}
+ {% set background_style = '' %}
+   {% if faqs_data['color'] is defined and faqs_data['color'] != '' %}
+    {% set background_color = faqs_data['color'] %}
+      {% set background_style = 'style=background-color:'~background_color %}
+      {% endif %}
+      <div class="faq__item-container">
+        <div class="faq__item-section-top">
+         {% if faqs_data['section_title'] is defined %}
+          <h2>{{ faqs_data['section_title']|raw }}</h2>
+        {% endif %}
+        {% if faqs_data['section_description'] is defined %}
+          <p>{{ faqs_data['section_description']|raw }}</p>
+        {% endif %}
+      </div>
+      {% for faq in faqs %}
+        <div class="faq__item">
+          <div class="accordion__item accordion__item-{{ loop.index }}" aria-haspopup="true" aria-expanded="false">
+            <span id="accordion__item_title">{{ faq.question|raw }}</span>
+            <div class="accordion__desc closed">
+              <div class="accordion__h" {{ background_style }}></div>
+              <div class="accordion__v" {{ background_style }}></div>
+            </div>
+          </div>
+          <div class="accordion__item-panel" style="">
+            {{ faq.answer['value']|raw }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+

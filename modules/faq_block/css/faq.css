@@ -1,0 +1,113 @@
+.faq__item-container {
+    max-width: 800px;
+    width: 90%;
+    margin: 1em auto;
+}
+.faq__item {
+    margin-top: 25px;
+}
+.faq__item .accordion__item {
+    padding: 30px 10px 5px 0px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    border-radius: 0px;
+    background: none;
+    display: flex;
+    border-top: 2px solid #f2f2f2;
+    font-size: 1.25rem;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+}
+.faq__item .active, .faq__item .accordion__item:hover {
+    background-color: none;
+    cursor: pointer;
+}
+
+.faq__item .active i {
+    transform: rotate(90deg);
+}
+.faq__item .accordion__item-panel {
+    max-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition-duration: 400ms;
+    transition-property: max-height, visibility;
+    transition-delay: 0, 400ms;
+}
+.accordion__item-panel.open {
+    visibility: visible;
+    transition-duration: 400ms;
+    transition-property: max-height, visibility;
+    transition-delay: 400ms, 0;
+}
+.closed .accordion__v {
+    transition: all 0.4s ease-in-out;
+    transform: rotate(-90deg);
+}
+.closed .accordion__h {
+    transition: all 0.4s ease-in-out;
+    transform: rotate(-90deg);
+    opacity: 1;
+}
+.active {
+    opacity: 1;
+}
+.active .accordion__v {
+    transition: all 0.4s ease-in-out;
+    transform: rotate(90deg);
+}
+.active .accordion__h {
+    transition: all 0.4s ease-in-out;
+    transform: rotate(90deg);
+    opacity: 0;
+}
+.accordion__desc {
+    position: relative;
+    flex: 0 0 30px;
+}
+.accordion__desc .accordion__h {
+    position: absolute;
+    background-color: #02a3ff;
+    width: 20px;
+    height: 3px;
+    left: 50%;
+    margin-left: -10px;
+    top: 50%;
+    margin-top: -1px;
+}
+.accordion__desc .accordion__v {
+    position: absolute;
+    background-color: #02a3ff;
+    width: 3px;
+    height: 20px;
+    left: 50%;
+    margin-left: -1px;
+    top: 50%;
+    margin-top: -10px;
+}
+.faq__item .accordion__item-1 {
+    border-top: none;
+}
+.faq__item-container h2 {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 700;
+    color: #202020;
+}
+.faq__item-container p {
+    margin-top: 40px;
+    text-align: center;
+}
+.faq__item-section-top {
+    width: 75%;
+}
+@media only screen and (max-width: 600px) {
+    .faq__item-section-top {
+        width: 100%;
+    }
+}
+/*css new*/

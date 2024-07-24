@@ -2034,7 +2034,7 @@ ol.search-results {
   width: 44px;
   height: 44px;
   padding: 0;
-  border: 1px solid var(--theme-color);
+  border: 1px solid whitesmoke;
   transition: all 0.3s ease-in-out;
 }
 
@@ -2502,6 +2502,7 @@ button.button-link:hover {
 .service a.button-link {
   color: var(--theme-color);
   background: transparent;
+  
   border: 2px solid var(--theme-color);
 }
 

@@ -1,0 +1,12 @@
+name: 'FAQ Block'
+type: module
+description: 'Provides the custom block to for the FAQ section.'
+core_version_requirement: ^10
+package: FAQ Block
+dependencies:
+  - drupal:block
+
+# Information added by Drupal.org packaging script on 2023-02-27
+version: '2.0.1'
+project: 'faq_block'
+datestamp: 1677513033
