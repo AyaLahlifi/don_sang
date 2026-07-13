@@ -1,75 +1,53 @@
-<img alt="Drupal Logo" src="https://www.drupal.org/files/Wordmark_blue_RGB.png" height="60px">
+# Blood Donation Web App
 
-Drupal is an open source content management platform supporting a variety of
-websites ranging from personal weblogs to large community-driven websites. For
-more information, visit the Drupal website, [Drupal.org][Drupal.org], and join
-the [Drupal community][Drupal community].
+[![PHP](https://img.shields.io/badge/PHP-8.x-777BB4.svg)](https://www.php.net/)
+[![Drupal](https://img.shields.io/badge/CMS-Drupal%2010-0678BE.svg)](https://www.drupal.org/)
+[![Database](https://img.shields.io/badge/Database-MySQL/MariaDB-003B57.svg)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-GPL--2.0-green.svg)](LICENSE.txt)
 
-## Contributing
+> **Une plateforme web robuste et sécurisée pour la gestion des dons de sang, des donneurs et des opérations de banque de sang.**
 
-Drupal is developed on [Drupal.org][Drupal.org], the home of the international
-Drupal community since 2001!
+---
 
-[Drupal.org][Drupal.org] hosts Drupal's [GitLab repository][GitLab repository],
-its [issue queue][issue queue], and its [documentation][documentation]. Before
-you start working on code, be sure to search the [issue queue][issue queue] and
-create an issue if your aren't able to find an existing issue.
+## 📑 Table des Matières
+1. [À propos du projet](#-à-propos-du-projet)
+2. [Fonctionnalités principales](#-fonctionnalités-principales)
+3. [Stack Technique](#-stack-technique)
+4. [Structure du Projet](#-structure-du-projet)
+5. [Prérequis et Installation](#-prérequis-et-installation)
+6. [Configuration de la Base de Données](#-configuration-de-la-base-de-données)
+7. [Utilisation](#-utilisation)
+8. [Auteur](#-auteur)
+9. [Licence](#-licence)
 
-Every issue on Drupal.org automatically creates a new community-accessible fork
-that you can contribute to. Learn more about the code contribution process on
-the [Issue forks & merge requests page][issue forks].
+---
 
-## Usage
+## 📌 À propos du projet
+Ce projet est une application web complète conçue pour faciliter et digitaliser le processus de don de sang. Elle permet aux administrateurs de gérer les stocks de sang, de suivre les donneurs, d'organiser des campagnes de collecte et de fournir des informations vitales aux utilisateurs. 
 
-For a brief introduction, see [USAGE.txt](/core/USAGE.txt). You can also find
-guides, API references, and more by visiting Drupal's [documentation
-page][documentation].
+Construite sur le CMS **Drupal 10**, l'application bénéficie d'une architecture modulaire, d'une sécurité renforcée et d'une interface d'administration intuitive.
 
-You can quickly extend Drupal's core feature set by installing any of its
-[thousands of free and open source modules][modules]. With Drupal and its
-module ecosystem, you can often build most or all of what your project needs
-before writing a single line of code.
+---
 
-## Changelog
+## ✨ Fonctionnalités principales
+- 👤 **Gestion des profils** : Inscription et gestion des donneurs et du personnel médical.
+- 🩸 **Suivi des stocks** : Visualisation en temps réel des niveaux de sang par groupe sanguin.
+- 📅 **Gestion des campagnes** : Planification et suivi des événements de collecte de sang.
+- 🔔 **Système de notification** : Alertes pour les donneurs éligibles et les stocks critiques.
+- 🎨 **Thème personnalisé** : Interface utilisateur responsive et adaptée au contexte médical.
 
-Drupal keeps detailed [change records][changelog]. You can search Drupal's
-changes for a record of every notable breaking change and new feature since
-2011.
+---
 
-## Security
+## 🛠️ Stack Technique
+| Catégorie | Technologies utilisées |
+| :--- | :--- |
+| **Backend** | PHP 8.x, Drupal 10 |
+| **Frontend** | Twig, HTML5, CSS3/SCSS, JavaScript |
+| **Base de données** | MySQL / MariaDB |
+| **Gestion des dépendances** | Composer |
+| **Serveur web** | Apache (avec `.htaccess`) ou Nginx |
 
-For a list of security announcements, see the [Security advisories
-page][Security advisories] (available as [an RSS feed][security RSS]). This
-page also describes how to subscribe to these announcements via email.
+---
 
-For information about the Drupal security process, or to find out how to report
-a potential security issue to the Drupal security team, see the [Security team
-page][security team].
-
-## Need a helping hand?
-
-Visit the [Support page][support] or browse [over a thousand Drupal
-providers][service providers] offering design, strategy, development, and
-hosting services.
-
-## Legal matters
-
-Know your rights when using Drupal by reading Drupal core's
-[license](/core/LICENSE.txt).
-
-Learn about the [Drupal trademark and logo policy here][trademark].
-
-[Drupal.org]: https://www.drupal.org
-[Drupal community]: https://www.drupal.org/community
-[GitLab repository]: https://git.drupalcode.org/project/drupal
-[issue queue]: https://www.drupal.org/project/issues/drupal
-[issue forks]: https://www.drupal.org/drupalorg/docs/gitlab-integration/issue-forks-merge-requests
-[documentation]: https://www.drupal.org/documentation
-[changelog]: https://www.drupal.org/list-changes/drupal
-[modules]: https://www.drupal.org/project/project_module
-[security advisories]: https://www.drupal.org/security
-[security RSS]: https://www.drupal.org/security/rss.xml
-[security team]: https://www.drupal.org/drupal-security-team
-[service providers]: https://www.drupal.org/drupal-services
-[support]: https://www.drupal.org/support
-[trademark]: https://www.drupal.com/trademark
+## 📂 Structure du Projet
+Le projet suit l'architecture standard de Drupal :
