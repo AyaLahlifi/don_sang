@@ -51,3 +51,15 @@ Construite sur le CMS **Drupal 10**, l'application bénéficie d'une architectur
 
 ## 📂 Structure du Projet
 Le projet suit l'architecture standard de Drupal :
+blood_donation_web_app/
+│
+├── core/ # Cœur du framework Drupal (ne pas modifier)
+├── modules/ # Modules personnalisés et contributifs du projet
+├── themes/ # Thèmes graphiques personnalisés
+├── profiles/ # Profils d'installation Drupal
+├── vendor/ # Dépendances PHP gérées par Composer
+├── sites/ # Configurations, fichiers et modules spécifiques au site
+├── drupalwebb.sql # Fichier de dump de la base de données
+├── composer.json # Fichier de gestion des dépendances PHP
+└── README.md # Documentation du projet (ce fichier)
+
