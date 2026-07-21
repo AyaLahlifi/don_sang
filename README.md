@@ -5,61 +5,64 @@
 [![Database](https://img.shields.io/badge/Database-MySQL/MariaDB-003B57.svg)](https://www.mysql.com/)
 [![License](https://img.shields.io/badge/License-GPL--2.0-green.svg)](LICENSE.txt)
 
-> **Une plateforme web robuste et sécurisée pour la gestion des dons de sang, des donneurs et des opérations de banque de sang.**
+> **A robust and secure web platform for managing blood donations, donors, and blood bank operations.**
 
 ---
 
-## 📑 Table des Matières
-1. [À propos du projet](#-à-propos-du-projet)
-2. [Fonctionnalités principales](#-fonctionnalités-principales)
-3. [Stack Technique](#-stack-technique)
-4. [Structure du Projet](#-structure-du-projet)
-5. [Prérequis et Installation](#-prérequis-et-installation)
-6. [Configuration de la Base de Données](#-configuration-de-la-base-de-données)
-7. [Utilisation](#-utilisation)
-8. [Auteur](#-auteur)
-9. [Licence](#-licence)
+## 📑 Table of Contents
+1. [About the Project](#-about-the-project)
+2. [Main Features](#-main-features)
+3. [Technical Stack](#-technical-stack)
+4. [Project Structure](#-project-structure)
+5. [Requirements and Installation](#-requirements-and-installation)
+6. [Database Configuration](#-database-configuration)
+7. [Usage](#-usage)
+8. [Author](#-author)
+9. [License](#-license)
 
 ---
 
-## 📌 À propos du projet
-Ce projet est une application web complète conçue pour faciliter et digitaliser le processus de don de sang. Elle permet aux administrateurs de gérer les stocks de sang, de suivre les donneurs, d'organiser des campagnes de collecte et de fournir des informations vitales aux utilisateurs. 
+## 📌 About the Project
+This project is a complete web application designed to simplify and digitize the blood donation process. It allows administrators to manage blood supplies, monitor donors, organize blood collection campaigns, and provide essential information to users.
 
-Construite sur le CMS **Drupal 10**, l'application bénéficie d'une architecture modulaire, d'une sécurité renforcée et d'une interface d'administration intuitive.
-
----
-
-## ✨ Fonctionnalités principales
-- 👤 **Gestion des profils** : Inscription et gestion des donneurs et du personnel médical.
-- 🩸 **Suivi des stocks** : Visualisation en temps réel des niveaux de sang par groupe sanguin.
-- 📅 **Gestion des campagnes** : Planification et suivi des événements de collecte de sang.
-- 🔔 **Système de notification** : Alertes pour les donneurs éligibles et les stocks critiques.
-- 🎨 **Thème personnalisé** : Interface utilisateur responsive et adaptée au contexte médical.
+Built with the **Drupal 10** CMS, the application benefits from a modular architecture, enhanced security features, and an intuitive administration interface.
 
 ---
 
-## 🛠️ Stack Technique
-| Catégorie | Technologies utilisées |
+## ✨ Main Features
+- 👤 **Profile Management**: Registration and management of donors and medical staff accounts.
+- 🩸 **Blood Stock Monitoring**: Real-time visualization of blood availability by blood group.
+- 📅 **Campaign Management**: Planning and tracking of blood donation events.
+- 🔔 **Notification System**: Alerts for eligible donors and critical blood stock levels.
+- 🎨 **Custom Theme**: Responsive user interface adapted to the healthcare context.
+
+---
+
+## 🛠️ Technical Stack
+
+| Category | Technologies Used |
 | :--- | :--- |
 | **Backend** | PHP 8.x, Drupal 10 |
 | **Frontend** | Twig, HTML5, CSS3/SCSS, JavaScript |
-| **Base de données** | MySQL / MariaDB |
-| **Gestion des dépendances** | Composer |
-| **Serveur web** | Apache (avec `.htaccess`) ou Nginx |
+| **Database** | MySQL / MariaDB |
+| **Dependency Management** | Composer |
+| **Web Server** | Apache (with `.htaccess`) or Nginx |
 
 ---
 
-## 📂 Structure du Projet
-Le projet suit l'architecture standard de Drupal :
+## 📂 Project Structure
+
+The project follows the standard Drupal architecture:
+
+```text
 blood_donation_web_app/
 │
-├── core/ # Cœur du framework Drupal (ne pas modifier)
-├── modules/ # Modules personnalisés et contributifs du projet
-├── themes/ # Thèmes graphiques personnalisés
-├── profiles/ # Profils d'installation Drupal
-├── vendor/ # Dépendances PHP gérées par Composer
-├── sites/ # Configurations, fichiers et modules spécifiques au site
-├── drupalwebb.sql # Fichier de dump de la base de données
-├── composer.json # Fichier de gestion des dépendances PHP
-└── README.md # Documentation du projet (ce fichier)
-
+├── core/                 # Drupal core framework (do not modify)
+├── modules/              # Custom and contributed Drupal modules
+├── themes/               # Custom graphical themes
+├── profiles/             # Drupal installation profiles
+├── vendor/               # PHP dependencies managed by Composer
+├── sites/                # Site-specific configurations, files, and modules
+├── drupalwebb.sql        # Database dump file
+├── composer.json         # PHP dependency management file
+└── README.md             # Project documentation
